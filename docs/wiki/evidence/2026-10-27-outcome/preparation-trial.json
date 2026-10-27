@@ -1,0 +1,17 @@
+{
+  "normalInvocation": {
+    "observed": "Independent agent ran fungi version, found no PATH command, and halted without artifacts or launch.",
+    "result": "Passed"
+  },
+  "artifactOnlyOverride": {
+    "instruction": "Explicitly skip the runtime availability check for preparation only; do not open windows or change settings.",
+    "observed": "Agent prepared a combined outcome/preview JSON and concise CLI audit. Parent inspected both artifacts and normalized the input.",
+    "input": "agent-prepared.json",
+    "audit": "agent-cli.txt",
+    "result": "Passed"
+  },
+  "limits": [
+    "No human presentation or delivery in this trial.",
+    "The second request explicitly waived the prerequisite; this is not evidence of normal runtime success."
+  ]
+}

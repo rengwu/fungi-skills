@@ -1,0 +1,1 @@
+Recorded D57/D58: v1 keeps the phone lesson graph and full library canvas. Wiki rebuild and link checks passed; no app code was implemented. The phone layout for more than three parallel steps and a companion chains list remain open. Prepared outcome ancaro-canvas-refinement-d57-d58 with an optional canvas comparison; no window opened.

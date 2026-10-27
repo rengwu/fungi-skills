@@ -1,0 +1,82 @@
+{
+  "scope": "Headless Chromium rendering and retry UI; mocked page bridge, no native delivery",
+  "input": {
+    "schema": "outcome/v1",
+    "id": "composer-width-demo",
+    "projectName": "Design study",
+    "title": "The composer has more room",
+    "markdown": "Three design decisions are recorded. **App implementation has not started.**\n\n## Accepted\n\n| Decision | Result |\n| --- | --- |\n| D51 · Edge margin | 8 dp on Home and in lessons |\n| D52 · Submit | Keeps its own column, despite my recommendation |\n| D53 · Field label | Placeholder only |\n\nA line grows from **287 to 311 dp** — about 48 characters instead of 44. Lesson text keeps its 20 dp margin.\n\n## Checked and still open\n\nThe wiki rebuilt and its link check passed. Typography and confidence-slider snapping remain unresolved.\n\n```mermaid\nflowchart LR\n A[Feedback] --> B[Recorded decisions] --> C[Next spike]\n```",
+    "questions": [
+      {
+        "id": "next-spike",
+        "prompt": "Where should the next spike focus?",
+        "recommendation": "Explore the lesson map; its phone layout determines scope.",
+        "options": [
+          "Lesson map",
+          "Typography"
+        ]
+      },
+      {
+        "id": "preview",
+        "prompt": "A preview can sit alongside the next questions",
+        "preview": {
+          "html": "<style>body{margin:0;background:#202023;color:#eee;font:16px system-ui;padding:20px}button{background:#b7a6ff;border:0;border-radius:6px;padding:10px 14px;font:inherit}p{margin:16px 0}svg{width:100%;height:100px}</style><button id=\"toggle\">Toggle spacing</button><p id=\"caption\">Compact spacing</p><svg viewBox=\"0 0 500 100\" aria-label=\"Three linked lesson steps\"><path d=\"M80 50H420\" stroke=\"#888\"/><g fill=\"#b7a6ff\"><circle cx=\"80\" cy=\"50\" r=\"13\"/><circle cx=\"250\" cy=\"50\" r=\"13\"/><circle cx=\"420\" cy=\"50\" r=\"13\"/></g></svg><script>let roomy=grill.state.roomy||false;toggle.onclick=()=>{roomy=!roomy;caption.textContent=roomy?\"Roomy spacing\":\"Compact spacing\";grill.setState({roomy})}</script>",
+          "height": 230,
+          "state": {
+            "roomy": false
+          }
+        }
+      }
+    ]
+  },
+  "results": {
+    "desktop": "Report, table, diagram, questions, preview and Notes rendered",
+    "narrow": "420 px viewport has no document horizontal overflow",
+    "retry": "Save and submit errors preserve edits; retry succeeds; duplicate click does not resubmit"
+  },
+  "resultData": {
+    "submits": 2,
+    "data": {
+      "schema": "outcome/v1",
+      "title": "The composer has more room",
+      "outcomeId": "composer-width-demo",
+      "answers": [
+        {
+          "questionId": "next-spike",
+          "number": 1,
+          "question": "Where should the next spike focus?",
+          "choiceId": null,
+          "choice": null,
+          "notes": "",
+          "status": "untouched",
+          "states": {},
+          "comments": []
+        },
+        {
+          "questionId": "preview",
+          "number": 2,
+          "question": "A preview can sit alongside the next questions",
+          "choiceId": null,
+          "choice": null,
+          "notes": "",
+          "status": "untouched",
+          "states": {},
+          "comments": []
+        },
+        {
+          "questionId": "outcome-notes",
+          "number": 3,
+          "question": "Notes about this outcome",
+          "choiceId": null,
+          "choice": null,
+          "notes": "Keep this feedback after retry",
+          "status": "feedback",
+          "states": {},
+          "comments": []
+        }
+      ]
+    }
+  },
+  "pageErrors": [],
+  "result": "Passed"
+}

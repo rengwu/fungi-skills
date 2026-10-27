@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Outcome</title>
+<link rel="stylesheet" href="outcome.css">
+</head>
+<body>
+<main>
+<header><p id="project-name"></p><h1 id="title">Outcome</h1><p id="delivery" class="hint"></p></header>
+<article id="outcome-report" aria-label="Outcome"></article>
+<form id="feedback">
+<label for="notes">Notes <span class="hint">· Optional</span></label>
+<textarea id="notes" class="notes-editor" rows="4" aria-describedby="notes-hint" disabled></textarea>
+<p id="notes-hint" class="hint">You can paste images into your notes.</p>
+<div id="images"></div>
+<div id="actions"><button type="button" id="cancel" disabled>Close</button><button type="submit" id="submit" disabled>Submit feedback</button></div>
+<p id="draft-message" class="hint" role="status" hidden></p>
+</form>
+<p id="message" role="alert" tabindex="-1" hidden></p>
+</main>
+<dialog id="image-preview"><img alt="Pasted image"><form method="dialog"><button>Close preview</button></form></dialog>
+<script src="vendor/marked.js"></script>
+<script src="vendor/purify.js"></script>
+<script src="vendor/pele.js"></script>
+<script type="module">import('./outcome.mjs').catch(error=>{const node=document.getElementById('message');node.textContent=error.message;node.hidden=false;});</script>
+</body>
+</html>

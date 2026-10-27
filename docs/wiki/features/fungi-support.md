@@ -18,6 +18,7 @@ The host needs command/file access on the desktop machine. Runtime availability 
 
 - The calling skill owns its workflow, interface/assets, input, answer schema and interpretation.
 - Shared instructions launch the prepared interface, retain its exact receipt/environment, follow callback/manual delivery and collect once on a completion cue. No polling or extra waiter.
+- For an optional report, opening does not block already-authorized independent work or require acknowledgment. Submission still closes the window; close without submission is not feedback.
 - Only a supported submitted result is passed to the caller for schema validation. Cancellation, close, failure and pending do not become answers.
 - Shared artifact handling preserves returned files and maps keys to workflow references. Explicit reopen creates a new linked session; it does not rewrite the old result.
 - Interface authors consult relevant installed help when needed. Existing interfaces use their prepared invocation without rereading the full manual.
@@ -30,5 +31,7 @@ See [setup](../verification/setup.md). Validate both skill frontmatters and all 
 A later behavioral trial should invoke a caller with a missing, unrecognized and valid PATH command, then exercise a human submission. Document checks alone do not prove that an agent follows the shared dependency correctly. Earlier native/callback evidence covers the same unchanged runtime, not the newly split instructions.
 
 ## Verification history
+
+- [Outcome implementation checks](../verification/runs/2026-10-27-outcome.md) — optional-report lifecycle and an independent unavailable-PATH instruction trial.
 
 - [Shared support extraction checks](../verification/runs/2026-10-27-shared-support.md)

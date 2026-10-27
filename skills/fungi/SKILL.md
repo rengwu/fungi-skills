@@ -22,9 +22,11 @@ fungi open /absolute/path/to/interface.html --input /absolute/path/to/input.json
 
 Prefer argument-array execution when available; quote paths appropriately for the host shell. Preserve the exact protocol-1 launch receipt: `session`, `collect`, and `collectEnv`. Keep interface assets and input available while open and for explicit reopening.
 
-- **`delivery.mode: callback`:** tell the user to submit and end the turn. The session owns completion; do not start another collector or waiter.
-- **`delivery.mode: manual`:** tell the user to say “done” after submitting, then end the turn. `auto` can fall back to manual; read the actual receipt.
+- **`delivery.mode: callback`:** tell the user how to submit; end the turn when waiting for their input. The session owns completion; do not start another collector or waiter.
+- **`delivery.mode: manual`:** tell the user to say “done” if they submit; end the turn when waiting for their input. `auto` can fall back to manual; read the actual receipt.
 - On that session’s completion notice or the user’s “done,” execute its `collect` argv once, merging `collectEnv` into the environment. Never choose a “latest” session or poll. If `kind: pending`, end the turn.
+
+For a report with optional feedback, opening the window does not require acknowledgment or block already-authorized independent work. Let the caller decide whether an answer is needed. Keep the same receipt and completion route; do not poll or create another waiter. End the turn when there is no independent work left. Submission closes the window; closing without submitting returns no feedback.
 
 Use `--delivery wait` only when the host keeps one call pending or automatically delivers background completion. A process ID requiring status checks is insufficient. If a wait returns the final result, use it directly without another collection.
 

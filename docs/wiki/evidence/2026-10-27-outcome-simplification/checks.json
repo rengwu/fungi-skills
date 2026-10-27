@@ -1,0 +1,13 @@
+{
+  "skillValidators": "outcome and grill-form passed",
+  "documentedInput": "Passed actual model normalization",
+  "unchangedRuntimeAssets": 15,
+  "linksChecked": 12,
+  "installedOutcome": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/outcome",
+  "instructionHashes": {
+    "skills/outcome/SKILL.md": "2b9a6c9bf4a2cbcdc07bcfeae98e9410450aa21ff9b28d60b5c9dd6b214d1e60",
+    "skills/outcome/references/authoring.md": "115dbe1aefc12274d0b763340b4cdc7f3adf63831b2368b4d536f1ce0b0aebdd",
+    "skills/outcome/agents/openai.yaml": "c4c2ea1d37d42ba1dc40e3fdcd3be0dc1ded77311fe3f3f4acc6580cad1181e9",
+    "skills/grill-form/SKILL.md": "c73d27877e8928fd4979ad1e6a5cad78b57570a37569d982e5b8dac8ab2c31bb"
+  }
+}

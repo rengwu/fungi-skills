@@ -1,0 +1,16 @@
+{
+  "beforeWords": {
+    "skills/outcome/SKILL.md": 968,
+    "skills/outcome/references/authoring.md": 771
+  },
+  "afterWords": {
+    "skills/outcome/SKILL.md": 155,
+    "skills/outcome/references/authoring.md": 254
+  },
+  "feedback": {
+    "creativeFreedom": "Allow custom layouts when useful",
+    "usage": "Use judgment throughout the conversation",
+    "usageNote": "when in doubt, most likely just use it.",
+    "draftReview": "untouched; no wording feedback submitted"
+  }
+}

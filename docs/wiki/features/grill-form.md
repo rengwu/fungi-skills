@@ -39,6 +39,10 @@ Model/transport tests do not establish native presentation or human usability. N
 
 ## Verification history
 
+- [Independent workflows](../verification/runs/2026-10-27-outcome-independent.md) — restored pre-outcome source and current native regression.
+
+- [Outcome implementation checks](../verification/runs/2026-10-27-outcome.md) — historical combined renderer and standalone regression, before separation.
+
 - [Rename verification](../verification/runs/2026-10-27-grill-form-rename.md) — current paths and `grill-form/v1` schema.
 
 - [Shared support extraction checks](../verification/runs/2026-10-27-shared-support.md) — instructions and packaging only; UI/runtime assets unchanged.

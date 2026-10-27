@@ -1,0 +1,6 @@
+{
+  "command": "node --test scripts/*.test.mjs",
+  "observed": "12 tests passed, 0 failed, 0 skipped",
+  "scope": "7 independent outcome tests and 5 unchanged interview transport tests",
+  "result": "Passed"
+}

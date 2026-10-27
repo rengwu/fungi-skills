@@ -1,0 +1,85 @@
+{
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "directory": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-outcome-smoke-UxmqtV",
+  "version": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "doctor": {
+    "available": true,
+    "kind": "doctor",
+    "protocol": 1,
+    "renderer": "wails",
+    "runtime": "WKWebView"
+  },
+  "reportClosed": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "0db48c589af8545b463662c57caa0007",
+    "outcome": "cancelled",
+    "artifacts": []
+  },
+  "reportSubmitted": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "7ff65a335f7c3c5f9c41718892410364",
+    "outcome": "submitted",
+    "data": {
+      "schema": "outcome/v1",
+      "outcomeId": "native-report",
+      "title": "Synthetic outcome — not project decisions",
+      "answers": [
+        {
+          "questionId": "outcome-notes",
+          "choiceId": null,
+          "choice": null,
+          "notes": "Native optional note [Image #1]",
+          "status": "feedback",
+          "images": [
+            {
+              "id": 1,
+              "offset": 21,
+              "artifact": "image-1",
+              "mimeType": "image/png"
+            }
+          ]
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "id": "b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064",
+        "key": "image-1",
+        "name": "image-1.png",
+        "mediaType": "image/png",
+        "path": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-outcome-smoke-UxmqtV/sessions/7ff65a335f7c3c5f9c41718892410364/artifacts/b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064",
+        "bytes": 68,
+        "sha256": "b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064"
+      }
+    ]
+  },
+  "questions": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "84f7803eda8b17c6cadecba26e987877",
+    "outcome": "submitted",
+    "data": {
+      "fixture": "questions",
+      "message": "Outcome presents a report and Notes. Use a separate session for questions."
+    },
+    "artifacts": []
+  },
+  "invalid": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "86795f23f7f678143affd2485e4aee30",
+    "outcome": "submitted",
+    "data": {
+      "fixture": "invalid",
+      "message": "Unrecognized outcome schema."
+    },
+    "artifacts": []
+  },
+  "result": "Passed"
+}

@@ -4,7 +4,7 @@ updated: 2026-10-27
 ---
 # fungi-skills
 
-Explore how to write reliable Fungi-based skills, starting with **grill-form**, then improve them through daily use.
+Explore how to write reliable Fungi-based skills, with **grill-form** for interviews and **outcome** for rich results and optional feedback, then improve them through daily use.
 
 - [Plan and decisions](planning.md)
 - [Source study and authoring findings](research.md)

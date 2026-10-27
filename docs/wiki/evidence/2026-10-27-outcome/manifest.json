@@ -1,0 +1,52 @@
+{
+  "gitRevision": "b1a1931d7e1260412bde93e58e632db4e9c20c45",
+  "workingTree": "Uncommitted outcome implementation",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "node": "v22.19.0",
+  "files": {
+    "scripts/native-smoke.mjs": "edb7604365e1d30dac3d858f7c813270c8c03bdf7f06acc1f1d2dc9a57620725",
+    "scripts/outcome-browser-smoke.mjs": "812a35568f58fbd3fba0fd52387956b89fc834774dd566452b8f8acef61a7c67",
+    "scripts/outcome-native-smoke.mjs": "4c7962b13a150a5c61fe656e3fee0fa00c5490adf9c50ad1a8e4d95e6947e8f0",
+    "scripts/outcome.test.mjs": "acb15805a43ef6bcfc257e66e8efdfa70bf5e48c4766bf579073513683236e29",
+    "scripts/transport.test.mjs": "d082eb9d0cff7da5407a4e02122f8aa806ddd79d1b2c7d2c84ed6c690843b710",
+    "skills/.DS_Store": "7391033201c59605e71c8b76073207e188e6b30e5002ae1a8fa18b25495e2cd6",
+    "skills/fungi/.DS_Store": "dc4a4cbd1f6d17c4f7bf1edb49134d4be5329b402a168ad13b4a12598c5d6147",
+    "skills/fungi/SKILL.md": "48626913b31adde4c66e9539720ce66e639d6f9bb6e496b35a2ce1020a14b5db",
+    "skills/fungi/agents/openai.yaml": "2b4eb6937d00702eb64f0fd05751e73c919c414c80d3a44590116df17f555163",
+    "skills/fungi/references/recovery.md": "89e20ce3123985b777e26e9fc18243cdc81c8aa30186bedbafe98f9b949b3581",
+    "skills/grill-form/.DS_Store": "6dfc1f6c042ebefc6376b6576f1f26a7f7a642d1eced70ad1873b2178c8edb8c",
+    "skills/grill-form/SKILL.md": "9ad622410ce63e5d730991087697b9afae15a574d559b7b1315b41a303bd3f9e",
+    "skills/grill-form/agents/openai.yaml": "8cab1b38f3c2467ea8801a5ad8e877c38875a854f3b9b383b903c57923562156",
+    "skills/grill-form/assets/.DS_Store": "9726edbbdefa3fe391ea326efee8889dde6f27a1b005c9f213586108608e5ec9",
+    "skills/grill-form/assets/examples.json": "a138732352db3164243aecfeec0cd06be95568fe59ffa6db280d87c102c42281",
+    "skills/grill-form/assets/form.html": "8a12579932bca14cdfaeb27f55515b4d194f25b7b9135e3b0286ffcb4d45cffa",
+    "skills/grill-form/assets/form.mjs": "da51a9ad40aab98631c7f23877a8757108d3b53cd571f9af9b3e97c28b96d449",
+    "skills/grill-form/assets/model.mjs": "d3488cd40a0ba6308ac8fcf5c3dc7e8bab39711b634666ff1debe9debc267b05",
+    "skills/grill-form/assets/presentation.mjs": "0c39cdc908e1f7ec4ac367d1ceab6067639e7e9c238827f646a9cf86ae2a046d",
+    "skills/grill-form/assets/transport.mjs": "5e9ca417833cf119f85b5b5f83620920df9cb29b7d1638d762c1f6b53be0111f",
+    "skills/grill-form/assets/vendor/README.md": "ed9bd6316687b20b440b782a182c637a906a68b0a86eaf3c4fd126f4e36c4536",
+    "skills/grill-form/assets/vendor/dompurify-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/grill-form/assets/vendor/dompurify-LICENSE-MPL": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+    "skills/grill-form/assets/vendor/marked-LICENSE": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c",
+    "skills/grill-form/assets/vendor/marked.js": "f424dcb508fdf93e0137a970cfce8f3207ea2e3f37eca5f7556a52875683632a",
+    "skills/grill-form/assets/vendor/pele-LICENSE": "311bccc30de6f7b9cbfb64232bb0c911ccb2191abe316550813ae25b2c7925b9",
+    "skills/grill-form/assets/vendor/pele.js": "b82d1bcd435302779a945e1e0f4a54ea56fb26e010ce3f2122f4216fcfc095d7",
+    "skills/grill-form/assets/vendor/purify.js": "2c90a9b46d6463f26038a29b686e82bc91de01fdac9d5229e7cfe3b360134ea2",
+    "skills/grill-form/references/authoring.md": "6a877fe64c2d5737108f9d65a3a90ad2c3dcbdd1c3d076c2149eff978a8a0669",
+    "skills/grill-form/references/provenance.md": "8ba652264f3536daca7e1bb6ffde38148ad22477fbb2ca74db8c10066604f9aa",
+    "skills/outcome/SKILL.md": "42745ca959e60acc604f633b57af4f09d18486677cd1d02052424c66335f2f83",
+    "skills/outcome/agents/openai.yaml": "ec649439ab73fa33279c4f894910adb374be6aab12bc10fb9f965f1e466d0273",
+    "skills/outcome/references/authoring.md": "5d9f9c84f0bf38689932c38aeb0dc1d13f5fea04c8f73498225405bcd80840a1"
+  },
+  "fungi": {
+    "path": "/Users/rengwu/.fungi/bin/fungi",
+    "sha256": "6b9e60866ff93d216bde63cbbabc93eb2340674298826fbb3aebab0c21530a29",
+    "version": {
+      "kind": "version",
+      "protocol": 1,
+      "version": "v0.1.0-alpha.2"
+    }
+  },
+  "localLinksChecked": 24,
+  "installedOutcome": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/outcome"
+}

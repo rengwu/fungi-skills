@@ -81,3 +81,40 @@ The user requested a new [rengwu/fungi-skills](https://github.com/rengwu/fungi-s
 - Which failures appear under prolonged use, sleep/wake or large image-heavy reviews?
 
 These do not block the first implementation. Packaging beyond a local skill and upstream changes remain follow-up scope.
+
+## Outcome workflow — accepted on 2026-10-27
+
+The user requested a new Fungi skill for the result-bearing replies between design/interview rounds. The motivating source was the ongoing Claude session originally under `ancaro`, now the Imparo project: the replies after the width round (D51–D53), tutor-status round (D54–D56), and map round (D57–D58). These report decisions, departures from recommendations, verification, caveats, open questions and the next useful spike. Keep that substance in the richer surface.
+
+Accepted through the three-question grill-form round and subsequent chat:
+
+- **Name:** `outcome`, singular (agent recommendation; the user subsequently used this name).
+- **Activation:** keep it active for this conversation until turned off, covering substantive result turns rather than progress messages. An explicit one-off request remains one-off.
+- **Reading:** no acknowledgment is needed. Optional Notes are always available, including reports with no questions. Reading does not block already-authorized work.
+- **Lifecycle:** leave the window open while reading. Submitting feedback closes it; the user explicitly confirmed this matches their intent. Closing without submission is not acceptance.
+- **Combined workflow:** present the outcome and the ready next spike/interview in one window. The user confirmed outcome and grill-form should work together. Do not open two windows for the same round.
+- **CLI auditing:** the original “outcome presented” only response was superseded. Keep a concise plaintext outcome in the CLI for traceability, with the full report and interaction in the window.
+
+Implementation choice: share grill-form's prepared page, preview/comment/image controls and persistence model. `outcome/v1` selects a report above 0–10 ordinary interview items plus an always-present Notes field. Standalone interviews keep `grill-form/v1`. This avoids a second questionnaire implementation. The new skill depends on the sibling `fungi` and `grill-form` directories. No Fungi engine change, new collector, instruction-file hook or global activation setting is needed.
+
+The development shell still lacks `fungi` on PATH. The normal skill availability gate remains intact; native development tests explicitly name the installed binary and isolate their sessions. The preparation interview used the user's existing jstack form; no Fungi installation or shell settings were changed.
+
+See [Outcome behavior](features/outcome.md) and [verification](verification/runs/2026-10-27-outcome.md). Daily usability, long-idle behavior and real callback delivery for this new combined flow remain follow-up observations, not prerequisites to shipping the local skill.
+
+## Outcome simplification — accepted on 2026-10-27
+
+The user asked to remove unnecessary instructions, loosen usage and leave presentation to the model's creativity. The follow-up form selected **custom layouts when useful** and **agent judgment throughout the conversation**, adding: “when in doubt, most likely just use it.” The draft-review item was untouched; no further wording feedback was submitted.
+
+The skill now keeps only the small workflow: use Fungi, present freely, offer Notes, optionally combine with grill-form, keep a concise CLI summary and continue from feedback. The prepared page is a convenient default. The authoring reference contains only that page's technical contract. Removed content checklists, report-order prescriptions, audit formatting requirements and duplicated lifecycle instructions are deleted, not moved elsewhere. This supersedes the original strict presentation/activation guidance. Existing renderer behavior is unchanged.
+
+## Outcome reminders restored — accepted on 2026-10-27
+
+The user requested all six proposed additions: distinguish accepted/proposed/implemented/checked results; interpret Notes and answers against their original outcome; prefer combining ready forms/spikes; avoid implied decisions from unanswered items, dismissal or preview changes; avoid acknowledgment loops; and give the result in the CLI if presentation fails. These are brief workflow reminders. Creative freedom, custom layouts and discretionary usage remain as accepted in the simplification round.
+
+The user also requested a minimal prepared-page JSON input and launch command directly in the skill, as a convenient starting example. Detailed fields remain in the authoring reference.
+
+## Independent workflows — accepted on 2026-10-27
+
+The user removed the combined flow and requested that outcome and grill-form be independent, with grill-form restored to its earlier form. They want agents focused on solving the problem rather than designing Fungi layouts. Frequent windows are welcome. The CLI should keep a detailed summary, only slightly more concise than the window.
+
+Outcome now owns a prepared report-and-Notes page and its complete assets; it depends only on the shared Fungi skill. Structured interviews and spikes remain in separate sessions. Grill-form's skill and runtime files are restored exactly to the pre-outcome Git baseline. Nonempty question arrays are rejected by the outcome page rather than silently dropped. General feedback, images and draft recovery remain available. This supersedes the earlier custom-layout, combined-flow and brief-audit choices; presentation content and visuals remain flexible.
