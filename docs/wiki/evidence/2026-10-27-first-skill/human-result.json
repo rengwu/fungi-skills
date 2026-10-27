@@ -1,0 +1,40 @@
+{
+  "protocol": 1,
+  "kind": "result",
+  "session": "bc4cdecc3736c4fd9b81065518f78122",
+  "outcome": "submitted",
+  "data": {
+    "schema": "grill-form/v1",
+    "title": "First daily-use trial",
+    "answers": [
+      {
+        "questionId": "ready",
+        "number": 1,
+        "question": "Is this ready for your day-to-day trial?",
+        "choiceId": "start",
+        "choice": "Start the trial",
+        "notes": "",
+        "status": "feedback",
+        "states": {},
+        "comments": []
+      },
+      {
+        "questionId": "feedback",
+        "number": 2,
+        "question": "What feels awkward or needs changing?",
+        "choiceId": null,
+        "choice": null,
+        "notes": "idk if the default font size should be smaller, i'll decide in the future after more use",
+        "status": "feedback",
+        "states": {
+          "main": {
+            "size": 14
+          }
+        },
+        "comments": []
+      }
+    ]
+  },
+  "artifacts": [],
+  "_renameNote": "Skill names and paths normalized to grill-form on 2026-10-27. This historical record was not rerun; retained hashes identify the original pre-rename bytes."
+}

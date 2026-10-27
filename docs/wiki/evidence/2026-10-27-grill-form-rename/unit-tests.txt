@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: partial feedback preserves untouched items and returns selected labels
+ok 1 - partial feedback preserves untouched items and returns selected labels
+  ---
+  duration_ms: 1.410833
+  type: 'test'
+  ...
+# Subtest: required answers and Something else retain their meaning
+ok 2 - required answers and Something else retain their meaning
+  ---
+  duration_ms: 0.279125
+  type: 'test'
+  ...
+# Subtest: PNG bytes round-trip through Fungi attachments and draft restoration
+ok 3 - PNG bytes round-trip through Fungi attachments and draft restoration
+  ---
+  duration_ms: 1.035916
+  type: 'test'
+  ...
+# Subtest: region comments preserve their own state separately from final state
+ok 4 - region comments preserve their own state separately from final state
+  ---
+  duration_ms: 0.415167
+  type: 'test'
+  ...
+# Subtest: oversize feedback and malformed references fail without mutating answers
+ok 5 - oversize feedback and malformed references fail without mutating answers
+  ---
+  duration_ms: 0.372708
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 65.735916

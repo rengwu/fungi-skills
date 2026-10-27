@@ -1,0 +1,16 @@
+{
+  "assets/examples.json": "a138732352db3164243aecfeec0cd06be95568fe59ffa6db280d87c102c42281",
+  "assets/fixture.mjs": "35d76cfe1dd8d125ef262c28e49758d0740ab3a099f8fcd3d3fdad215fa4e483",
+  "assets/form.html": "1aca0f0fc498db26546dde9150e7b0b501d27d233fe7fdf53f567bff4181936a",
+  "assets/form.mjs": "ff796c03ea58bfd71a0f5dfbfb0028ba8bce25a007f511ccc3ea70efb2c3cb09",
+  "assets/model.mjs": "1e3df1cbb0cea3822d342cbc43e478238fb496b4f9da37934cc8d7cf6990ee32",
+  "assets/transport.mjs": "a26dce03a66840537e6051285333d209d192561d42901e0fc0faa82fb98abe3d",
+  "assets/vendor/README.md": "ed9bd6316687b20b440b782a182c637a906a68b0a86eaf3c4fd126f4e36c4536",
+  "assets/vendor/dompurify-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "assets/vendor/dompurify-LICENSE-MPL": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+  "assets/vendor/marked-LICENSE": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c",
+  "assets/vendor/marked.js": "f424dcb508fdf93e0137a970cfce8f3207ea2e3f37eca5f7556a52875683632a",
+  "assets/vendor/pele-LICENSE": "311bccc30de6f7b9cbfb64232bb0c911ccb2191abe316550813ae25b2c7925b9",
+  "assets/vendor/pele.js": "b82d1bcd435302779a945e1e0f4a54ea56fb26e010ce3f2122f4216fcfc095d7",
+  "assets/vendor/purify.js": "2c90a9b46d6463f26038a29b686e82bc91de01fdac9d5229e7cfe3b360134ea2"
+}

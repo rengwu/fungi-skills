@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-10-26T18:55:31.474460+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "sourceRevision": "No Git repository at spike kickoff",
+  "files": {
+    "scripts/native-smoke.mjs": "730a59c15ba20f466978688748a9f3b658907d0f6d6abc4dd9bef38fd4735388",
+    "scripts/transport.test.mjs": "d9b30ba44b78b5b16cb686295f43c4cf1f3557fcb20d4434892fcbf9f06937b5",
+    "skills/grill-form/SKILL.md": "66e02dc64ebf63163b9d1a38e6b3c273a1d42bfc02d85d4d3dc18aae0222685f",
+    "skills/grill-form/agents/openai.yaml": "e3480cfa1411ecc17cc940e46c754c8a972a1ebc0088672e3ec6238afd246dcc",
+    "skills/grill-form/assets/examples.json": "a138732352db3164243aecfeec0cd06be95568fe59ffa6db280d87c102c42281",
+    "skills/grill-form/assets/form.html": "493bdbdfa05e25b143a70cc1f7d3b63c23f17c02fe3ac048fd469a70ba106d0e",
+    "skills/grill-form/assets/form.mjs": "8c0d3c26df622706f053dcd8728797895c7eab7079e186d58c9e4382713401dd",
+    "skills/grill-form/assets/model.mjs": "1e3df1cbb0cea3822d342cbc43e478238fb496b4f9da37934cc8d7cf6990ee32",
+    "skills/grill-form/assets/transport.mjs": "a26dce03a66840537e6051285333d209d192561d42901e0fc0faa82fb98abe3d",
+    "skills/grill-form/assets/vendor/README.md": "ed9bd6316687b20b440b782a182c637a906a68b0a86eaf3c4fd126f4e36c4536",
+    "skills/grill-form/assets/vendor/dompurify-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/grill-form/assets/vendor/dompurify-LICENSE-MPL": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+    "skills/grill-form/assets/vendor/marked-LICENSE": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c",
+    "skills/grill-form/assets/vendor/marked.js": "f424dcb508fdf93e0137a970cfce8f3207ea2e3f37eca5f7556a52875683632a",
+    "skills/grill-form/assets/vendor/pele-LICENSE": "311bccc30de6f7b9cbfb64232bb0c911ccb2191abe316550813ae25b2c7925b9",
+    "skills/grill-form/assets/vendor/pele.js": "b82d1bcd435302779a945e1e0f4a54ea56fb26e010ce3f2122f4216fcfc095d7",
+    "skills/grill-form/assets/vendor/purify.js": "2c90a9b46d6463f26038a29b686e82bc91de01fdac9d5229e7cfe3b360134ea2",
+    "skills/grill-form/references/authoring.md": "c050ff9d69e526df9adbe86a0cb65bf618ef6a34efe3ad6046f42c4e8cba77e0",
+    "skills/grill-form/references/provenance.md": "844bbbb43b0774372caac37ee786c4592d73d0cf5f7d7283dabcd554742e1a2b",
+    "skills/grill-form/references/recovery.md": "b3ca3e58c00800cffe7e1c5d793f3976a0864ac6cb51ca6a320b4c12747383ea"
+  },
+  "binaries": {
+    "/Users/rengwu/.fungi/bin/fungi": "6b9e60866ff93d216bde63cbbabc93eb2340674298826fbb3aebab0c21530a29",
+    "/Users/rengwu/.fungi/versions/v0.1.0-alpha.2/fungi": "c62bed6989dff20f212e27caf97d90bf18e8bab50c220c1d4200b9c143945314",
+    "/Users/rengwu/.fungi/versions/v0.1.0-alpha.2/renderer/Fungi.app/Contents/MacOS/fungi-renderer": "4f01f042e350445fea94bcb0cdc7c2c728a605f8e4c8a25996dcf6ae2c22965a"
+  },
+  "_renameNote": "Skill names and paths normalized to grill-form on 2026-10-27. This historical record was not rerun; retained hashes identify the original pre-rename bytes."
+}

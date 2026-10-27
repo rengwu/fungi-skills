@@ -1,0 +1,115 @@
+{
+  "capturedAt": "2026-10-26T19:32:33.515796+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "sourceRevision": "No Git repository",
+  "validators": [
+    {
+      "skill": "fungi",
+      "exitCode": 0,
+      "stdout": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "grill-form",
+      "exitCode": 0,
+      "stdout": "Skill is valid!",
+      "stderr": ""
+    }
+  ],
+  "localLinks": [
+    {
+      "source": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/fungi/SKILL.md",
+      "link": "references/recovery.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/fungi/references/recovery.md"
+    },
+    {
+      "source": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/SKILL.md",
+      "link": "../fungi/SKILL.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/fungi/SKILL.md"
+    },
+    {
+      "source": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/SKILL.md",
+      "link": "references/authoring.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/references/authoring.md"
+    },
+    {
+      "source": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/SKILL.md",
+      "link": "assets/form.html",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/assets/form.html"
+    },
+    {
+      "source": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/references/authoring.md",
+      "link": "../assets/examples.json",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/assets/examples.json"
+    },
+    {
+      "source": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/references/provenance.md",
+      "link": "../assets/vendor/README.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/assets/vendor/README.md"
+    },
+    {
+      "source": "/Users/rengwu/.codex/skills/fungi/SKILL.md",
+      "link": "references/recovery.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/fungi/references/recovery.md"
+    },
+    {
+      "source": "/Users/rengwu/.codex/skills/grill-form/SKILL.md",
+      "link": "../fungi/SKILL.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/fungi/SKILL.md"
+    },
+    {
+      "source": "/Users/rengwu/.codex/skills/grill-form/SKILL.md",
+      "link": "references/authoring.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/references/authoring.md"
+    },
+    {
+      "source": "/Users/rengwu/.codex/skills/grill-form/SKILL.md",
+      "link": "assets/form.html",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/assets/form.html"
+    },
+    {
+      "source": "/Users/rengwu/.codex/skills/grill-form/references/authoring.md",
+      "link": "../assets/examples.json",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/assets/examples.json"
+    },
+    {
+      "source": "/Users/rengwu/.codex/skills/grill-form/references/provenance.md",
+      "link": "../assets/vendor/README.md",
+      "resolved": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form/assets/vendor/README.md"
+    }
+  ],
+  "linkErrors": [],
+  "installedSkills": {
+    "fungi": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/fungi",
+    "grill-form": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/grill-form"
+  },
+  "runtimeAssetsCompared": 13,
+  "runtimeAssetsChanged": [],
+  "files": {
+    "skills/.DS_Store": "42caf8b5dfd590eec192197d3c604e2159a76826854cad448454a94887b7ce5a",
+    "skills/fungi/.DS_Store": "dc4a4cbd1f6d17c4f7bf1edb49134d4be5329b402a168ad13b4a12598c5d6147",
+    "skills/fungi/SKILL.md": "0071c1855800291ea0619be2d068e5389c7e46bc8c73fe4a388c073c288496d2",
+    "skills/fungi/agents/openai.yaml": "2b4eb6937d00702eb64f0fd05751e73c919c414c80d3a44590116df17f555163",
+    "skills/fungi/references/recovery.md": "89e20ce3123985b777e26e9fc18243cdc81c8aa30186bedbafe98f9b949b3581",
+    "skills/grill-form/.DS_Store": "4dc51f31ffe0154511750c7b0309b4a8661229c6a9797a17ba7fbddc81839bb9",
+    "skills/grill-form/SKILL.md": "cb3f1938e239cd65bdbe1ce48dc8df64ce60da256410622fdb9431348b63e5d1",
+    "skills/grill-form/agents/openai.yaml": "a1103561574b7c58c57e18f1cf4611db42a92370eefc9671e33820432f1afd99",
+    "skills/grill-form/assets/examples.json": "a138732352db3164243aecfeec0cd06be95568fe59ffa6db280d87c102c42281",
+    "skills/grill-form/assets/form.html": "493bdbdfa05e25b143a70cc1f7d3b63c23f17c02fe3ac048fd469a70ba106d0e",
+    "skills/grill-form/assets/form.mjs": "8c0d3c26df622706f053dcd8728797895c7eab7079e186d58c9e4382713401dd",
+    "skills/grill-form/assets/model.mjs": "1e3df1cbb0cea3822d342cbc43e478238fb496b4f9da37934cc8d7cf6990ee32",
+    "skills/grill-form/assets/transport.mjs": "a26dce03a66840537e6051285333d209d192561d42901e0fc0faa82fb98abe3d",
+    "skills/grill-form/assets/vendor/README.md": "ed9bd6316687b20b440b782a182c637a906a68b0a86eaf3c4fd126f4e36c4536",
+    "skills/grill-form/assets/vendor/dompurify-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/grill-form/assets/vendor/dompurify-LICENSE-MPL": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+    "skills/grill-form/assets/vendor/marked-LICENSE": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c",
+    "skills/grill-form/assets/vendor/marked.js": "f424dcb508fdf93e0137a970cfce8f3207ea2e3f37eca5f7556a52875683632a",
+    "skills/grill-form/assets/vendor/pele-LICENSE": "311bccc30de6f7b9cbfb64232bb0c911ccb2191abe316550813ae25b2c7925b9",
+    "skills/grill-form/assets/vendor/pele.js": "b82d1bcd435302779a945e1e0f4a54ea56fb26e010ce3f2122f4216fcfc095d7",
+    "skills/grill-form/assets/vendor/purify.js": "2c90a9b46d6463f26038a29b686e82bc91de01fdac9d5229e7cfe3b360134ea2",
+    "skills/grill-form/references/authoring.md": "6a877fe64c2d5737108f9d65a3a90ad2c3dcbdd1c3d076c2149eff978a8a0669",
+    "skills/grill-form/references/provenance.md": "8ba652264f3536daca7e1bb6ffde38148ad22477fbb2ca74db8c10066604f9aa"
+  },
+  "_renameNote": "Skill names and paths normalized to grill-form on 2026-10-27. This historical record was not rerun; retained hashes identify the original pre-rename bytes.",
+  "_projectRenameNote": "Project names and absolute paths normalized to fungi-skills on 2026-10-27. This historical record was not rerun."
+}

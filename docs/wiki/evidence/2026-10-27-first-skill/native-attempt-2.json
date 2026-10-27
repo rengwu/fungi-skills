@@ -1,0 +1,18 @@
+{
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "directory": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-grill-smoke-uz24Im",
+  "version": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "doctor": {
+    "available": true,
+    "kind": "doctor",
+    "protocol": 1,
+    "renderer": "wails",
+    "runtime": "WKWebView"
+  },
+  "result": "Failed",
+  "error": "Command failed: /Users/rengwu/.fungi/bin/fungi open /var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-grill-smoke-uz24Im/assets/form.html --input /var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-grill-smoke-uz24Im/input.json --delivery wait\n"
+}

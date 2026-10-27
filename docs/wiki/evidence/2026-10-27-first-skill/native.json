@@ -1,0 +1,105 @@
+{
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "directory": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-grill-smoke-4qBGzI",
+  "version": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "doctor": {
+    "available": true,
+    "kind": "doctor",
+    "protocol": 1,
+    "renderer": "wails",
+    "runtime": "WKWebView"
+  },
+  "cancelled": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "a9a35680c495ad31edaa07887011eca0",
+    "outcome": "cancelled",
+    "artifacts": []
+  },
+  "submitted": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "f658773550fe76ba201c1b93e6cc66f1",
+    "outcome": "submitted",
+    "data": {
+      "schema": "grill-form/v1",
+      "title": "Synthetic fixture — not project decisions",
+      "answers": [
+        {
+          "questionId": "choice",
+          "number": 1,
+          "question": "Fixture choice",
+          "choiceId": "option1",
+          "choice": "First",
+          "notes": "",
+          "status": "feedback",
+          "states": {},
+          "comments": []
+        },
+        {
+          "questionId": "notes",
+          "number": 2,
+          "question": "Fixture notes and PNG",
+          "choiceId": null,
+          "choice": null,
+          "notes": "Native smoke [Image #1]",
+          "images": [
+            {
+              "id": 1,
+              "offset": 13,
+              "mimeType": "image/png",
+              "bytes": 68,
+              "artifact": "image-1"
+            }
+          ],
+          "status": "feedback",
+          "states": {},
+          "comments": []
+        },
+        {
+          "questionId": "preview",
+          "number": 3,
+          "question": "Fixture diagram and preview",
+          "choiceId": null,
+          "choice": null,
+          "notes": "",
+          "status": "feedback",
+          "states": {
+            "main": {
+              "size": 20
+            }
+          },
+          "comments": []
+        },
+        {
+          "questionId": "untouched",
+          "number": 4,
+          "question": "Leave blank",
+          "choiceId": null,
+          "choice": null,
+          "notes": "",
+          "status": "untouched",
+          "states": {},
+          "comments": []
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "id": "b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064",
+        "key": "image-1",
+        "name": "image-1.png",
+        "mediaType": "image/png",
+        "path": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-grill-smoke-4qBGzI/sessions/f658773550fe76ba201c1b93e6cc66f1/artifacts/b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064",
+        "bytes": 68,
+        "sha256": "b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064"
+      }
+    ]
+  },
+  "result": "Passed",
+  "_renameNote": "Skill names and paths normalized to grill-form on 2026-10-27. This historical record was not rerun; retained hashes identify the original pre-rename bytes."
+}
