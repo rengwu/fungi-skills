@@ -1,0 +1,79 @@
+{
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "directory": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-theme-smoke-yFQOdE",
+  "version": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "results": [
+    {
+      "theme": "classic",
+      "session": "c8ffecd143a951771f0bc652f8afc8e1",
+      "fixture": "theme",
+      "background": "rgb(22, 21, 19)",
+      "bgToken": "#161513",
+      "bodyFont": "IBM Plex Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans loaded",
+        "IBM Plex Sans unloaded",
+        "Newsreader unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    },
+    {
+      "theme": "mono",
+      "session": "9db9655125264ae5a9ee981ecf0a5d14",
+      "fixture": "theme",
+      "background": "rgb(250, 250, 250)",
+      "bgToken": "#fafafa",
+      "bodyFont": "IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, monospace",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans unloaded",
+        "Newsreader unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    },
+    {
+      "theme": "neutral",
+      "session": "851745e72ae7339a51c36899ff738fbf",
+      "fixture": "theme",
+      "background": "rgb(255, 255, 255)",
+      "bgToken": "#ffffff",
+      "bodyFont": "IBM Plex Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans loaded",
+        "IBM Plex Sans unloaded",
+        "Newsreader unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    },
+    {
+      "theme": "paper",
+      "session": "ffe87467373c93415af96a600e743360",
+      "fixture": "theme",
+      "background": "rgb(251, 249, 243)",
+      "bgToken": "#fbf9f3",
+      "bodyFont": "Newsreader, Iowan Old Style, Charter, Georgia, serif",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans unloaded",
+        "Newsreader loaded",
+        "Newsreader unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    }
+  ],
+  "result": "Passed"
+}

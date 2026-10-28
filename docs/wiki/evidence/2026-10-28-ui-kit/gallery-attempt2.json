@@ -1,0 +1,5 @@
+{
+  "scope": "Shared gallery components, headless Chromium with injected public bridge",
+  "result": "Failed",
+  "error": "TimeoutError: Waiting for selector `#gallery-notes .image-chip` failed\n    at CSSQueryHandler.waitFor (file:///private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/common/QueryHandler.js:211:46)\n    at async CdpFrame.waitForSelector (file:///private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/api/Frame.js:546:21)\n    at async CdpPage.waitForSelector (file:///private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/api/Page.js:1404:20)\n    at async file:///Users/rengwu/Desktop/Projects/fungi-skills/scripts/ui-browser-smoke.mjs:34:97"
+}

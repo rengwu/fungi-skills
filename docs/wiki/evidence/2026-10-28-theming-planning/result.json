@@ -1,0 +1,105 @@
+{
+    "protocol": 1,
+    "kind": "result",
+    "session": "d12f198cca267acc65d2875323ca29bc",
+    "outcome": "submitted",
+    "data": {
+        "schema": "grill-form/v1",
+        "title": "Fungi UI theming: decisions before the spike",
+        "answers": [
+            {
+                "questionId": "direction",
+                "number": 1,
+                "question": "Which direction should lead the 2nd theme?",
+                "choiceId": "paper",
+                "choice": "A \u00b7 Paper (editorial)",
+                "notes": "",
+                "status": "feedback",
+                "states": {
+                    "main": {
+                        "direction": "paper"
+                    }
+                },
+                "comments": []
+            },
+            {
+                "questionId": "light-dark",
+                "number": 2,
+                "question": "How should the 2nd theme relate to light and dark?",
+                "choiceId": "light-only",
+                "choice": "2nd theme is light-only; current theme stays dark",
+                "notes": "",
+                "status": "feedback",
+                "states": {},
+                "comments": []
+            },
+            {
+                "questionId": "selection",
+                "number": 3,
+                "question": "Who decides which theme a window uses?",
+                "choiceId": "preference",
+                "choice": "Workflow default, overridable by a personal setting the assembler reads",
+                "notes": "",
+                "status": "feedback",
+                "states": {},
+                "comments": []
+            },
+            {
+                "questionId": "reach",
+                "number": 4,
+                "question": "How far may a theme go beyond colours and type?",
+                "choiceId": "scoped-rules",
+                "choice": "Tokens plus scoped structural rules",
+                "notes": "",
+                "status": "feedback",
+                "states": {},
+                "comments": []
+            },
+            {
+                "questionId": "fonts",
+                "number": 5,
+                "question": "Can themes bundle font files, or system fonts only?",
+                "choiceId": "bundle",
+                "choice": "Bundle one or two open-licence fonts",
+                "notes": "bundle fonts, no limit, as the theme library grows",
+                "status": "feedback",
+                "states": {},
+                "comments": []
+            },
+            {
+                "questionId": "theme-one",
+                "number": 6,
+                "question": "What happens to the current dark theme?",
+                "choiceId": "refresh",
+                "choice": "Refresh it in this spike too, using the chosen direction",
+                "notes": "yeah the current theme is decent, but i wanna make some light changes to it - typography, colors, etc.",
+                "status": "feedback",
+                "states": {},
+                "comments": []
+            },
+            {
+                "questionId": "previews",
+                "number": 7,
+                "question": "Should themes reach inside sandboxed previews?",
+                "choiceId": "untouched",
+                "choice": "Leave previews as authored",
+                "notes": "",
+                "status": "feedback",
+                "states": {},
+                "comments": []
+            },
+            {
+                "questionId": "concerns",
+                "number": 8,
+                "question": "Anything that would make you reject a theme, or that it must have?",
+                "choiceId": null,
+                "choice": null,
+                "notes": "if it feels like slop: https://godobject.dev/blog/10-tells-of-slop/",
+                "status": "feedback",
+                "states": {},
+                "comments": []
+            }
+        ]
+    },
+    "artifacts": []
+}

@@ -10,7 +10,7 @@ Preserve the exact session receipt and environment.
 | `failed` or command error | Preserve the diagnostic and worker-log path. Use `fungi doctor` and `fungi help installation` for launch/runtime failures, or the relevant installed help topic. Do not repeatedly relaunch. |
 | Unknown protocol or outcome | Preserve the result and report incompatibility. The calling workflow separately validates its data schema. |
 
-Explicit recovery uses `fungi reopen SESSION --delivery auto` with the original `collectEnv`. This creates a new linked session from the original input and last acknowledged draft. Store its new receipt; the original result remains unchanged. Active and submitted sessions cannot be reopened. After an interruption, explain what happened before offering recovery.
+Explicit recovery uses `fungi reopen SESSION --delivery DELIVERY_MODE` with the original `collectEnv` and the host's selected delivery mode/tool settings. This creates a new linked session from the original input and last acknowledged draft. Store its new receipt, or consume the final result directly for `wait`; the original result remains unchanged. Active and submitted sessions cannot be reopened. After an interruption, explain what happened before offering recovery.
 
 Do not automatically install, update, rebuild, change system settings, or switch to a browser to repair an unavailable runtime. Keep the failure visible and give the relevant setup step.
 

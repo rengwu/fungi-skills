@@ -1,6 +1,6 @@
 ---
 title: Grill form
-updated: 2026-10-27
+updated: 2026-10-28
 ---
 # Grill form
 
@@ -10,13 +10,14 @@ Intent: perform jstack-style interviews and visual reviews through an existing F
 
 ## Entry points and prerequisites
 
-Load `skills/grill-form/SKILL.md` with its complete directory and the sibling `skills/fungi/` supporting skill. The entrypoint explicitly reads that dependency before preparing a round. The agent needs ordinary file and command access to the same desktop machine as Fungi. User invocation: “Use grill-form to collect the decisions needed for this task.”
+Load `skills/grill-form/SKILL.md` with its complete directory and the sibling `skills/fungi/` and `skills/fungi-ui/` supporting skills. The entrypoint explicitly reads that dependency before preparing a round. The agent needs ordinary file and command access to the same desktop machine as Fungi. User invocation: “Use grill-form to collect the decisions needed for this task.”
 
-Runtime: `fungi` on PATH, returning the expected protocol-1 version response, with a working renderer and desktop access for launch. The skill has no Node or jstack runtime dependency. Maintenance uses Node 22+.
+Runtime: `fungi` on PATH, returning the expected protocol-1 version response, with a working renderer and desktop access for launch. Node 22+ runs the workflow assembler; no package installation or jstack runtime dependency is needed. Open its returned retained bundle, not the source HTML template.
 
 ## Expected behavior
 
 - Delegate availability and session handling to [shared interface support](fungi-support.md). Keep the entrypoint focused on preparing the round, presenting the form, interpreting feedback and continuing the task.
+- Compose reusable UI from the [shared kit](fungi-ui.md), including choices, inline image Notes, rich content, previews and region comments. The workflow owns question/result semantics and can override styles.
 - Render 1–10 questions with optional choices, notes, Markdown/diagrams and sandboxed previews. Native submission accepts partial feedback; required items and “Something else” keep their validation.
 - Save acknowledged drafts and attachments. Explicit reopen restores choice, notes, images, final state and comments into a new linked session.
 - Submit through Fungi, return labelled answers and durable artifact references, and close the window. Prevent duplicate submit/editing during submission; a rejected save/submit keeps the form usable.
@@ -29,7 +30,7 @@ Runtime: `fungi` on PATH, returning the expected protocol-1 version response, wi
 Shared commands and isolation: [setup](../verification/setup.md).
 
 1. **Installation gate:** invoke the skill with `fungi` absent from PATH (even if present elsewhere), or resolving to a command without the expected version response; expect only install/PATH instructions. With the expected `fungi version` response, proceed to the form. This revised agent-instruction recipe remains unvalidated in an isolated harness.
-2. **Prepared native page:** run the native smoke. It drives real page controls in disposable sessions, saves a choice/notes/PNG/preview state, cancels, reopens, checks restored controls and submits. Verify returned bytes/hash and untouched item status.
+2. **Prepared native page:** run the native smoke. It drives real page controls in disposable sessions, saves a choice/notes/PNG/preview state and a region comment, cancels, reopens, checks restored controls and submits. Verify returned bytes/hash, untouched item status and comment-time state independently of final state.
 3. **Human review:** launch the skill with a real decision/review round and `auto`. Inspect the window, interact with a preview and region comment, optionally paste an image, submit, then observe callback consumption or manual fallback and collect once.
 4. **Recovery/failure:** deliberately cancel/close a disposable form; explicitly reopen. Exercise a rejected save/submit and confirm input stays usable; do not retry real interviews automatically.
 
@@ -38,6 +39,8 @@ Shared commands and isolation: [setup](../verification/setup.md).
 Model/transport tests do not establish native presentation or human usability. Native scripted controls do not establish physical clipboard/pointer behavior. Windows/Linux, unsupported protocols, a genuinely absent installation, OS close, failure/retry UI and long idle/sleep need separate observations. No browser-default or Fungi installation changes are part of this feature.
 
 ## Verification history
+
+- [Shared UI extraction](../verification/runs/2026-10-28-ui-kit.md) — all UI components moved into the kit and native composition verified.
 
 - [Independent workflows](../verification/runs/2026-10-27-outcome-independent.md) — restored pre-outcome source and current native regression.
 

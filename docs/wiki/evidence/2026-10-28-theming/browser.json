@@ -1,0 +1,58 @@
+{
+  "scope": "Headless Chromium rendering, selection and retry UI; mocked page bridge, no native delivery",
+  "input": {
+    "schema": "outcome/v1",
+    "id": "composer-width-demo",
+    "projectName": "Design study",
+    "title": "The composer has more room",
+    "markdown": "Three design decisions are recorded. **App implementation has not started.**\n\n## Accepted\n\n| Decision | Result |\n| --- | --- |\n| D51 · Edge margin | 8 dp on Home and in lessons |\n| D52 · Submit | Keeps its own column, despite my recommendation |\n| D53 · Field label | Placeholder only |\n\nA line grows from **287 to 311 dp** — about 48 characters instead of 44. Lesson text keeps its 20 dp margin.\n\n## Checked and still open\n\nThe wiki rebuilt and its link check passed. Typography and confidence-slider snapping remain unresolved.\n\n```mermaid\nflowchart LR\n A[Feedback] --> B[Recorded decisions] --> C[Next spike]\n```\n\n| | Decision | Notes |\n| --- | --- | --- |\n| **D60** | Label the canvas like a map | Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing. Long prose about labels and spacing.  |",
+    "nextSteps": [
+      {
+        "id": "typography",
+        "label": "Review the type scale",
+        "recommendation": "Set the reading rhythm before refining the remaining controls."
+      },
+      {
+        "id": "snapping",
+        "label": "Decide confidence-slider snapping"
+      },
+      {
+        "id": "chips",
+        "label": "Try reply chips"
+      }
+    ]
+  },
+  "results": {
+    "recommendation": "Recommended marker and reason render only for the authored action; reason is associated with the checkbox; all choices start unchecked",
+    "desktop": "Report, table, diagram, unchecked next steps and Notes rendered without helper captions",
+    "narrow": "420 px viewport has no document horizontal overflow",
+    "selection": "Keyboard and pointer selection support multiple actions without Notes; clearing them disables blank submission; failed saving preserves selections",
+    "retry": "Save and submit errors preserve edits; retry succeeds; duplicate click does not resubmit"
+  },
+  "resultData": {
+    "submits": 2,
+    "data": {
+      "schema": "outcome/v1",
+      "outcomeId": "composer-width-demo",
+      "title": "The composer has more room",
+      "selectedNextSteps": [
+        {
+          "id": "snapping",
+          "label": "Decide confidence-slider snapping"
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "outcome-notes",
+          "choiceId": null,
+          "choice": null,
+          "notes": "Keep this feedback after retry",
+          "status": "feedback",
+          "images": []
+        }
+      ]
+    }
+  },
+  "pageErrors": [],
+  "result": "Passed"
+}

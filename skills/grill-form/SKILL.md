@@ -14,11 +14,19 @@ Write a UTF-8 JSON file in a unique temporary directory. Use [authoring](referen
 
 ## Present the form
 
-Use the prepared [page](assets/form.html) and the round’s question file, with absolute paths. The UI and libraries are bundled; no generator, package installation, or per-round UI development is needed.
+Run the prepared [assembler](scripts/assemble.mjs) with Node.js 22+ and the installed `fungi-ui` sibling. It handles the UI components; no per-round UI development or reading of the component guide is needed:
 
 ```sh
-fungi open /absolute/path/to/grill-form/assets/form.html --input /absolute/path/to/questions.json --delivery auto
+node /absolute/path/to/grill-form/scripts/assemble.mjs --input /absolute/path/to/questions.json
 ```
+
+Use the returned `html` and `input` paths and the delivery mode/tool settings chosen above:
+
+```sh
+fungi open /returned/bundle/form.html --input /returned/bundle/input.json --delivery DELIVERY_MODE
+```
+
+Keep the returned bundle for the session and any reopening. Prefer a 1200 × 900 window unless the user requests another size; add sizing flags only when supported by the installed CLI. Older builds use their default size.
 
 ## Interpret the feedback
 

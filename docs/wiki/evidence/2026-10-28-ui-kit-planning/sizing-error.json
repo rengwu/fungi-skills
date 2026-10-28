@@ -1,0 +1,9 @@
+{
+  "protocol": 1,
+  "kind": "error",
+  "error": {
+    "code": "invalid_arguments",
+    "message": "unknown option --width"
+  },
+  "note": "Initial launch with --width 1200 --height 900 was rejected before session creation. Retried without unsupported sizing flags."
+}

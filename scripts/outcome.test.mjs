@@ -1,3 +1,5 @@
+import {assemble} from '../skills/fungi-ui/scripts/assemble.mjs';
+import {pathToFileURL} from 'node:url';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -14,6 +16,53 @@ test('report has optional Notes and no silent acknowledgment submission',()=>{
  assert.equal(data.answers.length,1);assert.equal(data.answers[0].questionId,NOTES_ID);
  assert.equal(data.answers[0].notes,'Please revise the margin.');
  assert.equal(snapshot(spec,'',new Map(),limits).data.answers[0].status,'untouched');
+});
+
+test('next steps allow explicit multiple selections without Notes, and clear back to no feedback',()=>{
+ const actions=normalizeInput({...input,nextSteps:[{id:'scope',label:'Decide import scope',selected:true},{id:'snapping',label:'Set slider snapping'},{id:'chips',label:'Review reply chips'}]});
+ assert.deepEqual(restoreDraft(null,[],actions,limits).selectedIds,[]);
+ assert.deepEqual(snapshot(actions,'',new Map(),limits).data.selectedNextSteps,[]);
+ const data=snapshot(actions,'',new Map(),limits,true,['chips','scope']).data;
+ assert.deepEqual(data.selectedNextSteps,[{id:'scope',label:'Decide import scope'},{id:'chips',label:'Review reply chips'}]);
+ assert.equal(data.answers[0].notes,'');assert.equal(data.answers[0].status,'untouched');
+ assert.throws(()=>snapshot(actions,'',new Map(),limits,true,[]),/feedback/);
+ assert.throws(()=>snapshot(actions,'',new Map(),limits,true,['invented']),/from this outcome/);
+ assert.throws(()=>snapshot(actions,'',new Map(),limits,true,['scope','scope']),/from this outcome/);
+});
+
+test('selected actions restore alongside Notes and images; earlier report drafts remain readable',()=>{
+ const actions=normalizeInput({...input,nextSteps:[{id:'review',label:'Review the layout'}]});
+ const saved=snapshot(actions,'See [Image #1]',new Map([[1,png]]),limits,true,['review']);
+ const restored=restoreDraft(saved.data,saved.attachments,actions,limits);
+ assert.deepEqual(restored.selectedIds,['review']);assert.equal(restored.notes,'See [Image #1]');assert.equal(restored.images.get(1),png);
+ const legacy=structuredClone(saved.data);delete legacy.selectedNextSteps;
+ assert.deepEqual(restoreDraft(legacy,saved.attachments,actions,limits).selectedIds,[]);
+ const changed=structuredClone(saved.data);changed.selectedNextSteps[0].label='A different action';
+ assert.throws(()=>restoreDraft(changed,saved.attachments,actions,limits),/do not match/);
+ assert.throws(()=>restoreDraft({...saved.data,selectedNextSteps:null},saved.attachments,actions,limits),/do not match/);
+});
+
+test('recommendations preserve their reason through selection and drafts without selecting by default',()=>{
+ const actions=normalizeInput({...input,nextSteps:[{id:'scope',label:'Settle the scope',recommendation:'  Unblocks the prototype.  '},{id:'prototype',label:'Build the prototype'}]});
+ assert.deepEqual(restoreDraft(null,[],actions,limits).selectedIds,[]);
+ assert.throws(()=>snapshot(actions,'',new Map(),limits,true),/feedback/);
+ const saved=snapshot(actions,'',new Map(),limits,true,['scope']);
+ assert.deepEqual(saved.data.selectedNextSteps,[{id:'scope',label:'Settle the scope',recommendation:'Unblocks the prototype.'}]);
+ assert.deepEqual(restoreDraft(saved.data,[],actions,limits).selectedIds,['scope']);
+ const legacy=structuredClone(saved.data);delete legacy.selectedNextSteps[0].recommendation;
+ assert.deepEqual(restoreDraft(legacy,[],actions,limits).selectedIds,['scope']);
+ assert.deepEqual(snapshot(actions,'',new Map(),limits,true,['prototype']).data.selectedNextSteps,[{id:'prototype',label:'Build the prototype'}]);
+ for(const recommendation of [null,true,42,' ','x'.repeat(1001)]){
+  assert.throws(()=>normalizeInput({...input,nextSteps:[{id:'scope',label:'Settle the scope',recommendation}]}),/reason/);
+ }
+});
+
+test('next-step input rejects malformed or ambiguous choices',()=>{
+ assert.throws(()=>normalizeInput({...input,nextSteps:null}),/list/);
+ assert.throws(()=>normalizeInput({...input,nextSteps:[{id:'same',label:'One'},{id:'same',label:'Two'}]}),/unique/);
+ assert.throws(()=>normalizeInput({...input,nextSteps:[{id:'../outside',label:'One'}]}),/valid ids/);
+ assert.throws(()=>normalizeInput({...input,nextSteps:[{id:'empty',label:' '}]}),/label/);
+ assert.deepEqual(normalizeInput(input).nextSteps,[]);
 });
 
 test('combined questions are rejected explicitly instead of discarded',()=>{
@@ -63,7 +112,16 @@ test('outcome owns its page and modules, with no runtime dependency on the inter
  for(const file of ['SKILL.md','references/authoring.md','assets/outcome.html','assets/outcome.mjs','assets/model.mjs']){
   const text=await readFile(new URL(file,root),'utf8');assert.doesNotMatch(text,/\.\.\/grill-form|\.\.\/\.\.\/grill-form/);
  }
- const html=await readFile(new URL('assets/outcome.html',root),'utf8');
- for(const [,local] of html.matchAll(/(?:src|href)="([^":]+)"/g))await readFile(new URL('assets/'+local,root));
- assert.ok((await readdir(new URL('assets/vendor/',root))).includes('pele-LICENSE'));
+ const bundle=await assemble({assets:new URL('assets/',root),entry:'outcome.html'});
+ const html=await readFile(bundle.html,'utf8');
+ for(const [,local] of html.matchAll(/(?:src|href)="([^":]+)"/g))await readFile(new URL(local,pathToFileURL(bundle.html)));
+ assert.ok((await readdir(bundle.directory+'/fungi-ui/assets/vendor/')).includes('pele-LICENSE'));
+});
+
+
+test('inline editors preserve actual image offsets even beside typed image-like text',()=>{
+ const notes='Typed [Image #1], then actual [Image #1]';
+ const result=snapshot(spec,notes,new Map([[1,png]]),limits,true,[],[{id:1,offset:notes.lastIndexOf('[Image #1]')}]);
+ assert.equal(result.data.answers[0].images[0].offset,notes.lastIndexOf('[Image #1]'));
+ assert.throws(()=>snapshot(spec,notes,new Map([[1,png]]),limits,true,[],[{id:1,offset:0}]),/editor image/);
 });

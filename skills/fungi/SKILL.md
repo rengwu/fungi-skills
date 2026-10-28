@@ -14,13 +14,22 @@ Tell the user: “Install [Fungi](https://github.com/rengwu/fungi/releases), add
 
 ## Present and return
 
-Use the calling workflow’s prepared interface and input, with absolute paths:
+Choose the return route before opening. Prefer automatic completion using the current host's tools:
+
+- **Codex:** use `auto` for its exact-conversation callback.
+- **Claude Code, local interactive:** use `wait` through Bash with `run_in_background: true`. End the turn when waiting; on its task-completion notification, read the finished output once. Headless/cloud modes have time limits; do not assume they support an unbounded human wait.
+- **Other hosts:** use `wait` only if a tool can keep the call pending or automatically deliver background completion for the intended wait. A process ID requiring status checks is insufficient. Consult `fungi describe delivery` when the route is unclear.
+- **No supported automatic route:** use `auto` and follow its manual fallback receipt.
+
+`auto` detects Fungi callbacks, not every host's native background mechanism. A manual fallback does not mean the host lacks a supported `wait` route. Do not add polling, a second waiter, or a subagent to wait for input.
+
+Use the calling workflow’s prepared interface and input, with absolute paths. Replace `DELIVERY_MODE` in launch examples with the chosen mode and apply the host tool settings above:
 
 ```sh
-fungi open /absolute/path/to/interface.html --input /absolute/path/to/input.json --delivery auto
+fungi open /absolute/path/to/interface.html --input /absolute/path/to/input.json --delivery DELIVERY_MODE
 ```
 
-Prefer argument-array execution when available; quote paths appropriately for the host shell. Preserve the exact protocol-1 launch receipt: `session`, `collect`, and `collectEnv`. Keep interface assets and input available while open and for explicit reopening.
+Prefer argument-array execution when available; quote paths appropriately for the host shell. For receipt-based launches, preserve the exact protocol-1 receipt: `session`, `collect`, and `collectEnv`. Keep interface assets and input available while open and for explicit reopening.
 
 - **`delivery.mode: callback`:** tell the user how to submit; end the turn when waiting for their input. The session owns completion; do not start another collector or waiter.
 - **`delivery.mode: manual`:** tell the user to say “done” if they submit; end the turn when waiting for their input. `auto` can fall back to manual; read the actual receipt.
@@ -28,7 +37,7 @@ Prefer argument-array execution when available; quote paths appropriately for th
 
 For a report with optional feedback, opening the window does not require acknowledgment or block already-authorized independent work. Let the caller decide whether an answer is needed. Keep the same receipt and completion route; do not poll or create another waiter. End the turn when there is no independent work left. Submission closes the window; closing without submitting returns no feedback.
 
-Use `--delivery wait` only when the host keeps one call pending or automatically delivers background completion. A process ID requiring status checks is insufficient. If a wait returns the final result, use it directly without another collection.
+With `wait`, the command returns the final result. Use it directly without another collection or asking the user to say “done.”
 
 Accept feedback only from `protocol: 1`, `kind: result`, `outcome: submitted`. Pass `data` and `artifacts` to the calling workflow for schema validation and interpretation. Unknown protocols or outcomes are compatibility failures. Closed, cancelled, or failed sessions are not answers; follow [recovery](references/recovery.md).
 
@@ -36,7 +45,7 @@ Match artifact `key` values to the workflow’s file references and use their re
 
 ## Author or change an interface
 
-For an existing interface, follow its workflow’s invocation instructions. When authoring or modifying an integration, read only the relevant installed help:
+For an existing interface with a prepared assembler or equivalent, follow its workflow’s invocation instructions. The assembler handles UI dependencies; routine callers do not need to read `fungi-ui` or inspect components. When authoring or modifying an integration, read only the relevant installed help:
 
 | Need | Command |
 | --- | --- |
@@ -47,4 +56,4 @@ For an existing interface, follow its workflow’s invocation instructions. When
 | Native executable helpers | `fungi help helper` |
 | CLI arguments and diagnostics | `fungi help cli` |
 
-Use the documented public interfaces and advertised limits. Workflow skills own their UI and data schemas; keep transport instructions here and API details in the installed manual.
+Use the documented public interfaces and advertised limits. Use [fungi-ui](../fungi-ui/SKILL.md) for reusable components and assembly when authoring interfaces. Workflow skills own composition and data schemas; keep session instructions here and API details in the installed manual.

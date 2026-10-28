@@ -1,0 +1,115 @@
+{
+  "projectName": "fungi-skills",
+  "title": "Shared UI: scope and behavior",
+  "questions": [
+    {
+      "id": "extraction-scope",
+      "number": 1,
+      "prompt": "How much should the first extraction move into the shared UI kit?",
+      "context": "We have agreed to a shared UI home with agent documentation and examples. Outcome and grill-form remain separate workflows. The common pieces include styling, Markdown/tables/diagrams, choices, Notes/images, action buttons and feedback status. Grill-form also has specialized interactive previews and region comments.",
+      "recommendation": "Move the common pieces and migrate both skills in this pass. Keep specialized preview/comment tools local until a concrete reuse need appears.",
+      "options": [
+        {
+          "id": "common",
+          "label": "Common components; migrate both skills (Recommended)"
+        },
+        {
+          "id": "all",
+          "label": "All existing UI, including previews and region comments"
+        },
+        {
+          "id": "rendering-first",
+          "label": "Styling and rich-content rendering first; controls later"
+        }
+      ]
+    },
+    {
+      "id": "consistency",
+      "number": 2,
+      "prompt": "How much visual variation should workflow skills have?",
+      "context": "Shared components can still drift if each skill adds its own overrides. Page composition can differ without changing the appearance or behavior of a shared control.",
+      "recommendation": "Use shared defaults with a few named variants, such as compact and regular. Changes to a shared control belong in the kit.",
+      "options": [
+        {
+          "id": "variants",
+          "label": "Shared defaults and documented variants (Recommended)"
+        },
+        {
+          "id": "uniform",
+          "label": "One fixed appearance for every shared component"
+        },
+        {
+          "id": "overrides",
+          "label": "Let each workflow override component styles freely"
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "number": 3,
+      "prompt": "Which Notes experience should become the shared default?",
+      "context": "Grill-form currently keeps pasted images as clickable chips inside the text. Outcome keeps text references with separate image thumbnails. These previews illustrate that difference; they are not functioning editors. Either choice keeps pasted images, previewing, draft recovery and optional Notes.",
+      "recommendation": "Use inline image chips, as in grill-form. Text and image references stay together, and its editor already handles editing and undo around the chips.",
+      "options": [
+        {
+          "id": "inline",
+          "label": "Inline image chips (Recommended)",
+          "preview": {
+            "html": "<style>*{box-sizing:border-box}body{margin:0;padding:16px;background:#18181b;color:#ededf0;font:14px/1.5 -apple-system,BlinkMacSystemFont,sans-serif}.label{margin-bottom:8px;font-weight:600}.editor{border:1px solid #414147;border-radius:7px;background:#202023;padding:12px;min-height:90px}.chip{display:inline-block;white-space:nowrap;background:#233943;border:1px solid #396371;border-radius:5px;padding:0 6px;color:#8bddf2;font:12px/1.7 monospace}.thumb{display:flex;gap:8px;align-items:center;width:max-content;margin-top:10px;border:1px solid #414147;border-radius:6px;background:#202023;padding:6px 9px;font-size:12px}.thumb svg{width:42px;height:30px}</style><div class=\"label\">Notes</div><div class=\"editor\">Make this label larger. <span class=\"chip\">▧ Image #1</span><br>Keep the spacing below it.</div>",
+            "height": 170
+          }
+        },
+        {
+          "id": "thumbnails",
+          "label": "Text references with thumbnails below",
+          "preview": {
+            "html": "<style>*{box-sizing:border-box}body{margin:0;padding:16px;background:#18181b;color:#ededf0;font:14px/1.5 -apple-system,BlinkMacSystemFont,sans-serif}.label{margin-bottom:8px;font-weight:600}.editor{border:1px solid #414147;border-radius:7px;background:#202023;padding:12px;min-height:90px}.chip{display:inline-block;white-space:nowrap;background:#233943;border:1px solid #396371;border-radius:5px;padding:0 6px;color:#8bddf2;font:12px/1.7 monospace}.thumb{display:flex;gap:8px;align-items:center;width:max-content;margin-top:10px;border:1px solid #414147;border-radius:6px;background:#202023;padding:6px 9px;font-size:12px}.thumb svg{width:42px;height:30px}</style><div class=\"label\">Notes</div><div class=\"editor\">Make this label larger. [Image #1]<br>Keep the spacing below it.</div><div class=\"thumb\"><svg viewBox=\"0 0 42 30\"><rect width=\"42\" height=\"30\" fill=\"#2a4b60\"/><path d=\"M0 30 14 10 25 25 32 17 42 30Z\" fill=\"#b3c7c0\"/></svg>Image #1</div>",
+            "height": 220
+          }
+        },
+        {
+          "id": "both",
+          "label": "Keep both as documented editor variants"
+        }
+      ]
+    },
+    {
+      "id": "runtime",
+      "number": 4,
+      "prompt": "Should ordinary skill use require an extra assembly tool such as Node.js?",
+      "context": "Fungi only serves assets beneath the opened page’s directory. It cannot directly import a sibling skill’s files. We need to handle that packaging centrally. Prepared distributions can avoid extra runtime tools; a per-session assembly helper adds a runtime prerequisite.",
+      "recommendation": "Keep ordinary use to Fungi plus the installed skill files. Handle assembly during development or distribution, with one maintained source for components.",
+      "options": [
+        {
+          "id": "prepared",
+          "label": "No extra runtime tools; provide prepared interfaces (Recommended)"
+        },
+        {
+          "id": "helper",
+          "label": "A local assembly helper at launch is acceptable"
+        }
+      ]
+    },
+    {
+      "id": "missing-component",
+      "number": 5,
+      "prompt": "What should an agent do when it needs a reusable control the kit does not have?",
+      "context": "This concerns controls such as a new picker or editor. One-off report illustrations and the designs being reviewed can still be authored as content. The policy should prevent copied controls from drifting across future skills.",
+      "recommendation": "Add generally reusable controls to the shared kit, with a small example and documentation, then consume them from the workflow.",
+      "options": [
+        {
+          "id": "kit-first",
+          "label": "Add reusable controls to the kit first (Recommended)"
+        },
+        {
+          "id": "local-first",
+          "label": "Build locally; promote when a second workflow needs it"
+        },
+        {
+          "id": "ask",
+          "label": "Ask me before adding a new reusable control"
+        }
+      ]
+    }
+  ]
+}

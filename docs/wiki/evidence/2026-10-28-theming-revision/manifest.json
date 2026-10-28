@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-28T10:03:15.440755+00:00",
+  "gitBase": "d402fae5800c262e07ef2c8faaa3ab2aec335e02",
+  "dirty": true,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "node": "v22.19.0",
+  "fungi": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "binarySha256": "6b9e60866ff93d216bde63cbbabc93eb2340674298826fbb3aebab0c21530a29",
+  "wikipediaProbe": {
+    "headings": "\"Linux Libertine\", Georgia, Times, \"Source Serif 4\", serif \u2192 rendered Georgia",
+    "body": "sans-serif \u2192 rendered Helvetica",
+    "minorHeadings": "sans-serif bold \u2192 rendered Helvetica-Bold"
+  },
+  "sourceSha256": {
+    "scripts/ui-theme-native-smoke.mjs": "da2c8fd614b2fe24ce71717c6b5fac361e9d147f7e8b278417aaa71a08c5564d",
+    "scripts/ui-theme-smoke.mjs": "1836717912546f35afc729489f48e090acf6253ff1068433d0634c2c2dbe9d24",
+    "scripts/ui.test.mjs": "f8442b0832e3d308d6e4a1214d12825d71441e61bd1075287c26d2c7f0388543",
+    "skills/fungi-ui/assets/fonts.css": "d7fb19cda31494139731ca4ea43cd8cc9230b66c02561827173cd9ff4b9cd0b5",
+    "skills/fungi-ui/assets/themes/mono.css": "e1a86412c2c5ae88532460a222094056e9a838e8c7fadfbcb4eca29f9b6d105a",
+    "skills/fungi-ui/assets/themes/neutral.css": "98aa3b99260f0d2da73525e88d4b4e4eaa7b30b2e1021c54eebace172363dbc6",
+    "skills/fungi-ui/assets/themes/paper-dark.css": "f12a53c7ab68807968660c82d26abd21988da5d07bc1df6ddaedf89f267f0301",
+    "skills/fungi-ui/assets/themes/paper.css": "4304797d8c5d1df302ad8ab443944e8d81f5b503f1e9c444805ef76e5e2ae22c",
+    "skills/fungi-ui/assets/ui.css": "0067a366419db4833c9edb3bdf2737dc3219f94ef3d91e915955d89d359d0b85",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-LICENSE": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-400-italic.woff2": "0840095faae86403735a8c04014b72cb29e7923646b222b360b7e8252932e4e3",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-400-normal.woff2": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-500-normal.woff2": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-600-normal.woff2": "0d1f0b8d0722224e32e9f28261bdc86c79115be73444ae5eceb73976a1bcdf83",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-ext-400-italic.woff2": "1b07eee6df7d26b31864581c2365131d384077605e0b63ae67c4a0a64363a6de",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-ext-400-normal.woff2": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-ext-500-normal.woff2": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-mono-latin-ext-600-normal.woff2": "32057cf50dd14bdb21a2c93766c4a2c43e4abe688ea3922df3203cac7751a98b",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-sans-LICENSE": "d0283623ef57e722fd0eb688a8041589670c608ab780cd3612d06ba6f153d3fd",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-sans-latin-ext-wght-italic.woff2": "bf44b77cc751203b2f0ce95c048a9d8f984313f84b58106c7c4410ca50314016",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-sans-latin-ext-wght-normal.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-sans-latin-wght-italic.woff2": "4363757d2695c7633f98472855849f7c30528eba869d7968ee35b58c87cf14c1",
+    "skills/fungi-ui/assets/vendor/fonts/ibm-plex-sans-latin-wght-normal.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470"
+  }
+}

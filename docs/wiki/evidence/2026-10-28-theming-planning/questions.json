@@ -1,0 +1,154 @@
+{
+ "projectName": "fungi-skills",
+ "title": "Fungi UI theming: decisions before the spike",
+ "questions": [
+  {
+   "id": "direction",
+   "prompt": "Which direction should lead the 2nd theme?",
+   "context": "Switch tabs in the preview to compare the same outcome page in each direction; region comments work on any tab. These are rough sketches, not the real kit.\n\nI checked all 10 linked sites in a browser: 8 of the 11 references are light, reading-first article pages. Their palettes are warm off-white or near-white; their type is serif or monospace; they separate content with thin rules instead of boxed cards.\n\n| Direction | Drawn from | Character |\n| --- | --- | --- |\n| A · Paper | hugo.blog, Distill, Wikipedia, the arXiv page, Low-tech Magazine, sonnet.io | Serif reading column, ruled tables and rows, ink-black actions |\n| B · Mono | interfaces.dev image, growingSWE, Palais de Tokyo | All monospace, hairline boxes, dashed dividers, uppercase labels |\n| C · Neutral | shadcn, ciechanow.ski, MLU Explain | System sans, zinc greys, rounded cards with soft shadows |\n\nUnless you veto one in Notes, I plan to build all three as real theme files so you can switch between them in the gallery. Your pick gets the most polish and becomes the candidate.",
+   "recommendation": "A · Paper. Outcome is mostly reading, and the references cluster here. It is also the clearest break from the current \"bootstrap\" feel. C risks reading as a generic component library again, and B makes long prose tiring to read.",
+   "options": [
+    {
+     "id": "paper",
+     "label": "A · Paper (editorial)"
+    },
+    {
+     "id": "mono",
+     "label": "B · Mono (technical)"
+    },
+    {
+     "id": "neutral",
+     "label": "C · Neutral (component library)"
+    }
+   ],
+   "preview": {
+    "height": 760,
+    "state": {
+     "direction": "paper"
+    },
+    "html": "<style>\n*{box-sizing:border-box}html,body{margin:0}\nnav{display:flex;gap:2px;padding:8px 12px;background:#0d0d0f;font:12px -apple-system,system-ui,sans-serif;position:sticky;top:0;z-index:1}\nnav button{font:inherit;border:0;border-radius:5px;padding:6px 12px;background:transparent;color:#a1a1aa;cursor:pointer}\nnav button[aria-selected=true]{background:#3f3f46;color:#fff}\n#page{min-height:100vh;padding:36px 40px 40px}\n#page .wrap{margin:0 auto}\n.eyebrow,.lede,h1,h2,p{margin:0}\ntable{border-collapse:collapse;width:100%}\n.choice{display:flex;gap:10px;align-items:flex-start;cursor:pointer}\n.choice input{margin:4px 0 0;flex-shrink:0}\n.choice small{display:block}\n.actions{display:flex;gap:10px;margin-top:20px}\n.actions button{cursor:pointer}\n\n/* Current dark theme, reproduced from ui.css + outcome.css */\n.current{background:#18181b;color:#ededf0;font:15px/1.65 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif}\n.current .wrap{max-width:820px}\n.current .eyebrow{font-size:13px;color:#aaa6b3;margin-bottom:8px}\n.current h1{font-size:26px;line-height:1.25;font-weight:600;margin-bottom:12px}\n.current .lede{font-size:17px;color:#e6e2ee;margin-bottom:16px}\n.current code{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;background:#121215;padding:2px 4px;border-radius:3px}\n.current table{font-size:13px;margin:16px 0 28px}\n.current th,.current td{padding:8px 12px;border:1px solid #45454e;text-align:left}\n.current th{background:#29292f}\n.current h2{font-size:16px;font-weight:600;margin:0 0 12px;padding-top:24px;border-top:1px solid #414147}\n.current .choice{border:1px solid #39393f;border-radius:7px;padding:10px 12px;margin-bottom:8px;font-size:14px}\n.current .choice.on{border-color:#9b8ce9;background:#29243b;color:#d1c7ff}\n.current .choice input{accent-color:#ad9afa}\n.current .badge{font-size:11px;font-weight:600;color:#c8bcff;margin-left:8px;font-style:normal}\n.current .choice small{font-size:13px;color:#bdb7c9;margin-top:4px}\n.current .notes-label{font-size:16px;font-weight:600;margin:20px 0 12px}\n.current .notes{border:1px solid #414147;border-radius:7px;background:#202023;padding:10px;min-height:76px;font-size:14px;line-height:1.9}\n.current .chip{background:#233943;border:1px solid #396371;border-radius:5px;padding:0 6px;color:#8bddf2;font:12px/1.7 ui-monospace,Menlo,monospace}\n.current .actions button{font:13px -apple-system,system-ui,sans-serif;border:0;border-radius:7px;padding:10px 18px}\n.current .secondary{background:#303036;color:#ededf0}.current .primary{background:#b7a6ff;color:#1e1738}\n\n/* A. Paper: editorial reading column */\n.paper{background:#fbf9f3;color:#2b2924;font:17px/1.6 \"Iowan Old Style\",\"Charter\",\"Palatino Linotype\",Georgia,serif}\n.paper .wrap{max-width:660px}\n.paper .eyebrow{font:11px/1.4 ui-monospace,\"SF Mono\",Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:#8a8578;margin-bottom:14px}\n.paper h1{font-size:36px;line-height:1.15;font-weight:400;letter-spacing:-.01em;margin-bottom:14px}\n.paper .lede{font-size:19px;color:#3a372f;margin-bottom:18px}\n.paper code{font:14px ui-monospace,\"SF Mono\",Menlo,monospace;background:#f0ebdd;padding:1px 4px;border-radius:2px}\n.paper table{font-size:15px;margin:18px 0 30px;border-top:1.5px solid #2b2924;border-bottom:1.5px solid #2b2924}\n.paper th{font:11px ui-monospace,\"SF Mono\",Menlo,monospace;text-transform:uppercase;letter-spacing:.06em;color:#6b665a;text-align:left;padding:8px 16px 6px 0;border-bottom:1px solid #2b2924;font-weight:400}\n.paper td{padding:7px 16px 7px 0}\n.paper h2{font-size:21px;font-weight:600;margin:0 0 4px;padding-bottom:6px;border-bottom:1px solid #ddd6c4}\n.paper .choice{padding:11px 0;border-bottom:1px solid #e8e2d2;font-size:16px}\n.paper .choice input{accent-color:#2b2924}\n.paper .choice.on b{color:#1d4e89}\n.paper .badge{font:10px ui-monospace,\"SF Mono\",Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:#9a5b1e;margin-left:8px;font-style:normal}\n.paper .choice small{font-size:15px;font-style:italic;color:#6b665a;margin-top:2px}\n.paper .notes-label{font-size:21px;font-weight:600;margin:26px 0 10px}\n.paper .notes{background:#fffdf8;border:1px solid #d9d3c3;border-radius:2px;padding:10px 12px;min-height:76px;font-size:16px;line-height:1.8}\n.paper .chip{font:12px ui-monospace,\"SF Mono\",Menlo,monospace;border:1px solid #c9bfa5;background:#f3eddc;color:#5a4a22;border-radius:2px;padding:1px 5px}\n.paper .actions button{font:14px -apple-system,system-ui,sans-serif;border-radius:3px;padding:9px 18px}\n.paper .secondary{background:transparent;border:1px solid #c9c2b1;color:#2b2924}.paper .primary{background:#2b2924;border:1px solid #2b2924;color:#fbf9f3}\n\n/* B. Mono: technical, hairline boxes */\n.mono{background:#fafafa;color:#2e2e2e;font:14px/1.75 ui-monospace,\"SF Mono\",SFMono-Regular,Menlo,monospace}\n.mono .wrap{max-width:760px}\n.mono .eyebrow{font-size:12px;color:#9a9a9a;margin-bottom:10px}\n.mono h1{font-size:20px;line-height:1.35;font-weight:700;color:#111;margin-bottom:12px}\n.mono .lede{color:#444;margin-bottom:16px}\n.mono code{font:inherit;font-size:13px;border:1px solid #e0e0e0;background:#fff;border-radius:5px;padding:1px 6px}\n.mono table{font-size:13px;margin:16px 0 28px;border:1px solid #bdbdbd}\n.mono th{font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.06em;color:#8a8a8a;text-align:left;padding:8px 12px;border-bottom:1px solid #bdbdbd}\n.mono td{padding:8px 12px;border-bottom:1px dashed #d6d6d6}\n.mono h2{font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#8a8a8a;margin:0 0 12px;padding-top:18px;border-top:1px dashed #c4c4c4}\n.mono .choice{border:1px solid #d0d0d0;background:#fff;padding:10px 12px;margin-bottom:8px;font-size:13px}\n.mono .choice.on{border-color:#111}\n.mono .choice input{accent-color:#111}\n.mono .badge{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#777;border:1px solid #bbb;padding:0 5px;margin-left:8px;font-style:normal}\n.mono .choice small{font-size:12px;color:#777;margin-top:4px}\n.mono .notes-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#8a8a8a;margin:22px 0 10px}\n.mono .notes{border:1px solid #bdbdbd;background:#fff;padding:10px 12px;min-height:76px;font-size:13px;line-height:1.9}\n.mono .chip{border:1px solid #c4c4c4;background:#f2f2f2;border-radius:4px;padding:1px 6px;font-size:12px}\n.mono .actions button{font:13px ui-monospace,\"SF Mono\",Menlo,monospace;text-transform:uppercase;letter-spacing:.06em;border-radius:0;padding:9px 16px}\n.mono .secondary{background:transparent;border:1px solid #111;color:#111}.mono .primary{background:#111;border:1px solid #111;color:#fafafa}\n\n/* C. Neutral: shadcn-like zinc */\n.neutral{background:#fff;color:#09090b;font:14px/1.6 -apple-system,BlinkMacSystemFont,\"Inter\",\"Segoe UI\",sans-serif}\n.neutral .wrap{max-width:700px}\n.neutral .eyebrow{font-size:13px;color:#71717a;margin-bottom:6px}\n.neutral h1{font-size:28px;line-height:1.2;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}\n.neutral .lede{font-size:15px;color:#3f3f46;margin-bottom:18px}\n.neutral code{font:13px ui-monospace,\"SF Mono\",Menlo,monospace;background:#f4f4f5;border-radius:4px;padding:2px 5px}\n.neutral .tbl{border:1px solid #e4e4e7;border-radius:8px;overflow:hidden;margin:16px 0 28px}\n.neutral table{font-size:13px}\n.neutral th{background:#fafafa;color:#71717a;font-weight:500;text-align:left;padding:9px 14px;border-bottom:1px solid #e4e4e7}\n.neutral td{padding:9px 14px;border-top:1px solid #f0f0f2}\n.neutral h2{font-size:16px;font-weight:600;margin:0 0 12px}\n.neutral .choice{border:1px solid #e4e4e7;border-radius:8px;padding:12px 14px;margin-bottom:8px;box-shadow:0 1px 2px #0000000d}\n.neutral .choice.on{border-color:#18181b;box-shadow:0 0 0 1px #18181b}\n.neutral .choice input{accent-color:#18181b}\n.neutral .badge{font-size:11px;font-weight:500;background:#f4f4f5;border-radius:999px;padding:1px 8px;margin-left:8px;font-style:normal}\n.neutral .choice small{font-size:13px;color:#71717a;margin-top:2px}\n.neutral .notes-label{font-size:14px;font-weight:500;margin:22px 0 8px}\n.neutral .notes{border:1px solid #e4e4e7;border-radius:8px;padding:10px 12px;min-height:76px;box-shadow:0 1px 2px #0000000d;line-height:1.9}\n.neutral .chip{font:12px ui-monospace,\"SF Mono\",Menlo,monospace;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:6px;padding:1px 6px}\n.neutral .actions button{font:14px/1 -apple-system,system-ui,sans-serif;font-weight:500;border-radius:6px;height:36px;padding:0 16px}\n.neutral .secondary{background:#fff;border:1px solid #e4e4e7;color:#18181b}.neutral .primary{background:#18181b;border:1px solid #18181b;color:#fafafa}\n</style>\n<nav role=\"tablist\" aria-label=\"Direction\">\n<button role=\"tab\" data-d=\"current\">Current · dark</button>\n<button role=\"tab\" data-d=\"paper\">A · Paper</button>\n<button role=\"tab\" data-d=\"mono\">B · Mono</button>\n<button role=\"tab\" data-d=\"neutral\">C · Neutral</button>\n</nav>\n<div id=\"page\"><div class=\"wrap\">\n<p class=\"eyebrow\">fungi-skills · Outcome</p>\n<h1>Theme tokens are in place</h1>\n<p class=\"lede\">Every component now reads colour, type and radii from <code>--ui-*</code> tokens. The current dark theme renders unchanged.</p>\n<div class=\"tbl\"><table><thead><tr><th>ID</th><th>Change</th><th>Status</th></tr></thead><tbody>\n<tr><td>T1</td><td>Token layer in ui.css</td><td>Checked</td></tr>\n<tr><td>T2</td><td>Second theme prototypes</td><td>Proposed</td></tr>\n</tbody></table></div>\n<h2>Next steps</h2>\n<label class=\"choice on\"><input type=\"checkbox\" checked><span><b>Review the second theme</b><em class=\"badge\">Recommended</em><small>Compare it against the dark baseline in the gallery.</small></span></label>\n<label class=\"choice\"><input type=\"checkbox\"><span><b>Prototype a dark variant</b></span></label>\n<div class=\"notes-label\">Notes</div>\n<div class=\"notes\">Tables feel right; the headings could be larger <span class=\"chip\">[Image #1]</span></div>\n<div class=\"actions\"><button class=\"secondary\">Cancel</button><button class=\"primary\">Submit feedback</button></div>\n</div></div>\n<script>\nconst page=document.getElementById('page'),tabs=[...document.querySelectorAll('nav button')];\nfunction draw(){const d=fungiPreview.state.direction||'paper';page.className=d;for(const t of tabs)t.setAttribute('aria-selected',String(t.dataset.d===d));}\nfor(const t of tabs)t.onclick=()=>{fungiPreview.setState({direction:t.dataset.d});draw();};\ndraw();\n</script>\n"
+   }
+  },
+  {
+   "id": "light-dark",
+   "prompt": "How should the 2nd theme relate to light and dark?",
+   "context": "The current theme is dark-only, and every template sets `color-scheme: dark`. A theme sets `color-scheme` itself, so native checkboxes and scrollbars follow it.",
+   "recommendation": "Light-only 2nd theme. It gives the clearest contrast to the dark baseline and the smallest spike. The token names stay mode-neutral, so a dark variant can be added later without renaming anything.",
+   "options": [
+    {
+     "id": "light-only",
+     "label": "2nd theme is light-only; current theme stays dark"
+    },
+    {
+     "id": "paired",
+     "label": "Every theme ships light and dark, following the OS setting"
+    },
+    {
+     "id": "dark-too",
+     "label": "2nd theme is also dark: a restyle within dark"
+    }
+   ]
+  },
+  {
+   "id": "selection",
+   "prompt": "Who decides which theme a window uses?",
+   "context": "The accepted authoring boundary says routine callers never choose UI. So a theme must be either fixed by the workflow or applied mechanically, never chosen by the agent each round.\n\nMechanism I plan to use in every case: `data-theme=\"name\"` on `<html>` plus one `themes/name.css` file. Its tokens use zero specificity, so a workflow's own CSS still wins.",
+   "recommendation": "Workflow default plus a personal preference. Each workflow keeps a default, and a small user-level setting read by the shared assembler can override it. Agents never pick; you set it once.",
+   "options": [
+    {
+     "id": "preference",
+     "label": "Workflow default, overridable by a personal setting the assembler reads"
+    },
+    {
+     "id": "workflow-only",
+     "label": "Each workflow pins its theme in its template; nothing else"
+    },
+    {
+     "id": "in-window",
+     "label": "A switcher inside the window (persistence across sessions unverified)"
+    },
+    {
+     "id": "per-round",
+     "label": "The agent picks per round through the input JSON"
+    }
+   ]
+  },
+  {
+   "id": "reach",
+   "prompt": "How far may a theme go beyond colours and type?",
+   "context": "| Reach | Theme can change | Example |\n| --- | --- | --- |\n| Tokens only | Colours, fonts, sizes, radii, spacing, borders, shadows | Paper gets serif text but keeps boxed choices |\n| Tokens + scoped rules | The above, plus per-component CSS inside the theme file | Paper draws choices as ruled rows and tables in booktabs style |\n\nScoped rules use `:where([data-theme=…])`, so they never outrank a workflow's overrides. Component markup and JS are identical in both cases.",
+   "recommendation": "Tokens + scoped rules. Paper and Mono both depend on structural differences (rules instead of boxes, booktabs tables). Tokens alone would give a recoloured version of the current look.",
+   "options": [
+    {
+     "id": "scoped-rules",
+     "label": "Tokens plus scoped structural rules"
+    },
+    {
+     "id": "tokens-only",
+     "label": "Tokens only"
+    }
+   ]
+  },
+  {
+   "id": "fonts",
+   "prompt": "Can themes bundle font files, or system fonts only?",
+   "context": "Pages are offline, and their CSP blocks network fonts. `outcome.html` allows no font source; grill-form allows only `data:` fonts. On macOS, system stacks give New York / Iowan Old Style / Charter for serif and SF Mono for monospace. Windows and Linux fall back to Georgia / Consolas or similar.\n\nBundling would mean vendoring OFL fonts with their licences (e.g. Source Serif 4, IBM Plex Mono) and adding `font-src 'self'` to each template. That adds roughly 100–300 KB per assembled bundle.",
+   "recommendation": "System fonts only for this spike. The candidates already look right on macOS with Iowan and SF Mono. Revisit bundling once a direction is picked, if it depends on a specific face.",
+   "options": [
+    {
+     "id": "system",
+     "label": "System font stacks only (for now)"
+    },
+    {
+     "id": "bundle",
+     "label": "Bundle one or two open-licence fonts"
+    }
+   ]
+  },
+  {
+   "id": "theme-one",
+   "prompt": "What happens to the current dark theme?",
+   "context": "The token refactor rewrites every colour in `ui.css` as a variable. Keeping the current look pixel-identical lets a screenshot comparison prove the refactor broke nothing.",
+   "recommendation": "Freeze it pixel-identical as the baseline (\"classic\"), and keep it the default until you choose otherwise. Refreshing it is a separate, later step.",
+   "options": [
+    {
+     "id": "freeze",
+     "label": "Freeze it pixel-identical; keep it the default"
+    },
+    {
+     "id": "refresh",
+     "label": "Refresh it in this spike too, using the chosen direction"
+    },
+    {
+     "id": "retire",
+     "label": "Retire it once the 2nd theme lands"
+    }
+   ]
+  },
+  {
+   "id": "previews",
+   "prompt": "Should themes reach inside sandboxed previews?",
+   "context": "Interactive previews (prototypes, visual options) are authored HTML in an isolated frame with its own styles. Today they ignore the page theme.",
+   "recommendation": "Leave previews as authored. A preview shows the design being judged, and theming it would change what is under review. If a need appears later, tokens can be offered as opt-in variables.",
+   "options": [
+    {
+     "id": "untouched",
+     "label": "Leave previews as authored"
+    },
+    {
+     "id": "opt-in",
+     "label": "Offer theme tokens inside previews as opt-in CSS variables"
+    },
+    {
+     "id": "inherit",
+     "label": "Apply the window theme to previews by default"
+    }
+   ]
+  },
+  {
+   "id": "concerns",
+   "prompt": "Anything that would make you reject a theme, or that it must have?",
+   "context": "For example: what makes something feel \"too much\" the way ShowAI does, a contrast or size floor, or how dense it should be."
+  }
+ ]
+}

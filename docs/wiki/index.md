@@ -1,6 +1,6 @@
 ---
 title: fungi-skills
-updated: 2026-10-27
+updated: 2026-10-28
 ---
 # fungi-skills
 
@@ -8,6 +8,7 @@ Explore how to write reliable Fungi-based skills, with **grill-form** for interv
 
 - [Plan and decisions](planning.md)
 - [Source study and authoring findings](research.md)
+- [Fungi UI design references and research handoff](design-references.md)
 - [Features](features/index.md)
 - [Verification setup](verification/setup.md)
 - [Feedback log](feedback.md)

@@ -1,0 +1,31 @@
+{
+  "revision": "d402fae5800c262e07ef2c8faaa3ab2aec335e02",
+  "dirty": true,
+  "node": "v22.19.0",
+  "platform": "darwin",
+  "arch": "arm64",
+  "osRelease": "27.0.0",
+  "sourceHashes": {
+    "skills/outcome/SKILL.md": "38432338313ca2859310baa865e724de50a77230a801e55a637e579540c0299d",
+    "skills/outcome/references/authoring.md": "6aa12556cecf785fc62b7dc8f2355b628a2fe8b88156dd3ffac2f93c7ae0b65c",
+    "skills/outcome/assets/model.mjs": "46a1a6370e09ae6e9d525b0fbcd2dca279b6230906bc7d82ce8499880080150e",
+    "skills/outcome/assets/outcome.mjs": "94e6f7c8e7a2e25b9573d91e5fda71ffd7b2063851a7dae471110a95ad3eecd6",
+    "skills/outcome/assets/outcome.css": "f99f0cf882fe99351b78967a7b790b5379a27650fde62b10407674bf55709727",
+    "skills/outcome/assets/outcome.html": "b33a53b953d0d24c014a822d40ab961e8f05ce42e0a43223a9ecccbc0d7da747",
+    "scripts/outcome.test.mjs": "af9667d379c9804418699518d18e09f8b2d9f75fedf34b06af868c03295fa3d1",
+    "scripts/outcome-browser-smoke.mjs": "15136f1dfc140f6115bac77489b8d95e4722c7a7276aea2fd2fdc1702aa96ef1",
+    "scripts/outcome-native-smoke.mjs": "4c811cae13a06e13aea193ea2c307b4c3b2baae51b8d28ef9ffb8cd48ce6293c"
+  },
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "binarySHA256": "6b9e60866ff93d216bde63cbbabc93eb2340674298826fbb3aebab0c21530a29",
+  "version": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "checks": {
+    "unit": "16 passed, 0 failed",
+    "skill": "Passed",
+    "whitespace": "Passed"
+  }
+}

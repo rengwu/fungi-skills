@@ -1,6 +1,6 @@
 # Authoring
 
-Write JSON; run the prepared page. Do not develop a new page per interview.
+Write JSON, run the workflow’s assembler, then open the returned page. See the [launch instructions](../SKILL.md). Do not develop a new page per interview. The source HTML composes shared components and must be assembled with the sibling `fungi-ui` kit.
 
 ```json
 {
@@ -24,7 +24,7 @@ Each item needs a `prompt`, `context`, or `preview`. Recommendations and choices
 
 `context` supports offline Markdown, tables, code and fenced Mermaid diagrams through bundled Marked, DOMPurify and Pele. Raw HTML is text. Omit diagram configuration directives, links, external images and custom icons. External navigation is disabled.
 
-`preview:{html,height,state}` shows a sandboxed inline frame. Height is 64–1200 pixels (default 280); state is a JSON object. Include the preview’s own styles. Embed SVG or raster data URLs. External scripts, styles, fonts, requests and nested frames are blocked. For interactive controls, read `window.grill.state` and call `window.grill.setState({...})` with the complete state when a meaningful value changes. DOM changes alone do not persist. Avoid clocks and randomness when the submitted view must be reproducible.
+`preview:{html,height,state}` shows a sandboxed inline frame. Height is 64–1200 pixels (default 280); state is a JSON object. Include the preview’s own styles. Embed SVG or raster data URLs. External scripts, styles, fonts, requests and nested frames are blocked. For interactive controls, read `window.fungiPreview.state` and call `window.fungiPreview.setState({...})` (the existing `window.grill` alias also works) with the complete state when a meaningful value changes. DOM changes alone do not persist. Avoid clocks and randomness when the submitted view must be reproducible.
 
 Open previews support region comments; option previews select an option. Notes and comments accept pasted PNG/JPEG/GIF/WebP images, represented by numbered chips. Review [examples.json](../assets/examples.json) for visual options, a stateful control and region feedback. Example content is not a project decision.
 

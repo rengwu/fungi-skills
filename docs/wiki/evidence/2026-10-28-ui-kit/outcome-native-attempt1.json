@@ -1,0 +1,115 @@
+{
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "directory": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-outcome-smoke-3y8SCv",
+  "version": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "doctor": {
+    "available": true,
+    "kind": "doctor",
+    "protocol": 1,
+    "renderer": "wails",
+    "runtime": "WKWebView"
+  },
+  "reportClosed": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "b2d5b15e47afd38af2dec20f5fe476d5",
+    "outcome": "cancelled",
+    "artifacts": []
+  },
+  "reportSubmitted": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "dac4a898628488537add287c5382ad3e",
+    "outcome": "submitted",
+    "data": {
+      "schema": "outcome/v1",
+      "outcomeId": "native-report",
+      "title": "Synthetic outcome — not project decisions",
+      "selectedNextSteps": [],
+      "answers": [
+        {
+          "questionId": "outcome-notes",
+          "choiceId": null,
+          "choice": null,
+          "notes": "Native optional note [Image #1]",
+          "status": "feedback",
+          "images": [
+            {
+              "id": 1,
+              "offset": 21,
+              "artifact": "image-1",
+              "mimeType": "image/png"
+            }
+          ]
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "id": "b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064",
+        "key": "image-1",
+        "name": "image-1.png",
+        "mediaType": "image/png",
+        "path": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-outcome-smoke-3y8SCv/sessions/dac4a898628488537add287c5382ad3e/artifacts/b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064",
+        "bytes": 68,
+        "sha256": "b5dbabf2b10ca4cadd16c1f0ed33142a2e7faf0beb1e2319b88a2dd24747d064"
+      }
+    ]
+  },
+  "stepsClosed": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "c8531d29657cfb6ceb584bb8265288ea",
+    "outcome": "cancelled",
+    "artifacts": []
+  },
+  "stepsSubmitted": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "2e37f59fcfef23318ce59c6b7fdd556f",
+    "outcome": "submitted",
+    "data": {
+      "schema": "outcome/v1",
+      "outcomeId": "native-report",
+      "title": "Synthetic outcome — not project decisions",
+      "selectedNextSteps": [
+        {
+          "id": "scope",
+          "label": "Decide import scope",
+          "recommendation": "Set the boundary before designing the import flow."
+        },
+        {
+          "id": "chips",
+          "label": "Review reply chips"
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "outcome-notes",
+          "choiceId": null,
+          "choice": null,
+          "notes": "",
+          "status": "untouched",
+          "images": []
+        }
+      ]
+    },
+    "artifacts": []
+  },
+  "questions": {
+    "protocol": 1,
+    "kind": "result",
+    "session": "561d8f1d950c48c13f7a0c11d2e74a4d",
+    "outcome": "submitted",
+    "data": {
+      "fixtureError": "null is not an object (evaluating 'document.getElementById('message').hidden')"
+    },
+    "artifacts": []
+  },
+  "result": "Failed",
+  "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- 'questions'\n"
+}

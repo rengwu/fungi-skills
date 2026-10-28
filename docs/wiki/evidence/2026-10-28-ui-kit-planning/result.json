@@ -1,0 +1,68 @@
+{
+  "protocol": 1,
+  "kind": "result",
+  "session": "92cf5fdb77e902102be8c3eed519d83f",
+  "outcome": "submitted",
+  "data": {
+    "schema": "grill-form/v1",
+    "title": "Shared UI: scope and behavior",
+    "answers": [
+      {
+        "questionId": "extraction-scope",
+        "number": 1,
+        "question": "How much should the first extraction move into the shared UI kit?",
+        "choiceId": "all",
+        "choice": "All existing UI, including previews and region comments",
+        "notes": "",
+        "status": "feedback",
+        "states": {},
+        "comments": []
+      },
+      {
+        "questionId": "consistency",
+        "number": 2,
+        "question": "How much visual variation should workflow skills have?",
+        "choiceId": "overrides",
+        "choice": "Let each workflow override component styles freely",
+        "notes": "its like a buffet, or lego blocks, like shadcn or base ui, skills/workflows pick and choose what they want and compose their own interface from the available pieces",
+        "status": "feedback",
+        "states": {},
+        "comments": []
+      },
+      {
+        "questionId": "notes",
+        "number": 3,
+        "question": "Which Notes experience should become the shared default?",
+        "choiceId": "inline",
+        "choice": "Inline image chips (Recommended)",
+        "notes": "",
+        "status": "feedback",
+        "states": {},
+        "comments": []
+      },
+      {
+        "questionId": "runtime",
+        "number": 4,
+        "question": "Should ordinary skill use require an extra assembly tool such as Node.js?",
+        "choiceId": "helper",
+        "choice": "A local assembly helper at launch is acceptable",
+        "notes": "for example, the fungi-ui contains the buttons, inputs, controls,   like how they look and behave, their variants, etc. . then a consuming skill like grill-form can have a assembler (like today) that assembles the form by making use of the base components, and arranges it in a way that suits the workflow",
+        "status": "feedback",
+        "states": {},
+        "comments": []
+      },
+      {
+        "questionId": "missing-component",
+        "number": 5,
+        "question": "What should an agent do when it needs a reusable control the kit does not have?",
+        "choiceId": "kit-first",
+        "choice": "Add reusable controls to the kit first (Recommended)",
+        "notes": "",
+        "status": "feedback",
+        "states": {},
+        "comments": []
+      }
+    ]
+  },
+  "artifacts": []
+}

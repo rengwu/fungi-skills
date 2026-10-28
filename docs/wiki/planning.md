@@ -1,6 +1,6 @@
 ---
 title: Plan and decisions
-updated: 2026-10-27
+updated: 2026-10-28
 ---
 # Plan and decisions
 
@@ -118,3 +118,99 @@ The user also requested a minimal prepared-page JSON input and launch command di
 The user removed the combined flow and requested that outcome and grill-form be independent, with grill-form restored to its earlier form. They want agents focused on solving the problem rather than designing Fungi layouts. Frequent windows are welcome. The CLI should keep a detailed summary, only slightly more concise than the window.
 
 Outcome now owns a prepared report-and-Notes page and its complete assets; it depends only on the shared Fungi skill. Structured interviews and spikes remain in separate sessions. Grill-form's skill and runtime files are restored exactly to the pre-outcome Git baseline. Nonempty question arrays are rejected by the outcome page rather than silently dropped. General feedback, images and draft recovery remain available. This supersedes the earlier custom-layout, combined-flow and brief-audit choices; presentation content and visuals remain flexible.
+
+
+## Outcome next steps and quiet UI — accepted on 2026-10-27
+
+Daily use in Imparo exposed two usability gaps. Recommended follow-up work should be directly selectable instead of requiring the user to retype a prose list. Outcome now accepts optional `nextSteps` actions and presents unchecked, multiple-selection checkboxes. A selection alone can submit; Notes and pasted images remain available. Selecting an action requests that work, not an answer to the underlying design question. Full questionnaires still have separate sessions.
+
+The user also requested removing the explanatory delivery line, the Optional tag beside Notes, and the image-paste hint. Keep the Notes label, controls, actual save status and errors. This changes the prepared UI and authoring contract; agents should put recommended actions in `nextSteps` rather than duplicate them in report prose.
+
+## Host-aware completion — corrected on 2026-10-27
+
+The user expected outcome to resume the agent automatically, as grill-form does, and reported being asked to say “done” in Imparo's Claude Code session. Its saved launch record confirms a manual fallback. The shared instructions had prescribed `--delivery auto` for every host, but installed Fungi only detects Codex's exact-conversation callback in that mode. Local interactive Claude Code supports the separate `wait` route through its native background Bash completion.
+
+The shared skill now selects the route before launch: Codex callback, supported host-managed pending/background wait, then manual fallback if neither is available. Outcome, grill-form and reopen examples defer to that selection. A completed wait is consumed directly; no second collection or user “done” is required. No engine changes or new waiter are needed. See the [verification record](verification/runs/2026-10-27-outcome-next-steps.md) for the confirmed diagnosis and the untested live-Claude follow-up.
+
+
+## Shared UI extraction — interview opened on 2026-10-28
+
+The user approved pursuing a shared UI library, documented for agents and consumed by independent workflows, and requested a grill-form round before implementation. The proposed home is `skills/fungi-ui/`, with reusable assets, an authoring entry point and working examples. Existing outcome/grill-form behavior is not being merged.
+
+The [five-question round](evidence/2026-10-28-ui-kit-planning/questions.json) asks about first-pass scope, permitted visual variants, the shared Notes experience, runtime tooling requirements and policy for missing reusable controls. Recommendations are proposals until answered. No extraction has started.
+
+The PATH-only availability check now succeeds on installed Fungi `v0.1.0-alpha.2`. The current skill's sizing flags were [rejected](evidence/2026-10-28-ui-kit-planning/sizing-error.json) before session creation, so the form was opened without those unsupported flags. The [launch receipt](evidence/2026-10-28-ui-kit-planning/receipt.json) arms the exact-conversation Codex callback for session `92cf5fdb77e902102be8c3eed519d83f`. The completion cue arrived and the session was collected once; the accepted decisions follow.
+
+
+## Shared UI decisions — accepted on 2026-10-28
+
+The [submitted round](evidence/2026-10-28-ui-kit-planning/result.json) resolves all five questions. The user approved implementation after settling the interview.
+
+- **Scope:** extract all existing UI, including interactive previews and region comments, into `fungi-ui`; migrate both workflows.
+- **Composition:** components are building blocks. Workflows choose, arrange and freely restyle them. The user compared this to a buffet or Lego blocks, using shadcn/Base UI as analogies, not requesting those dependencies. This supersedes the proposal to restrict styling to a few named variants.
+- **Notes:** use inline image chips as the shared default. Preserve paste, editing, preview, images and draft recovery.
+- **Assembly:** a local runtime assembly helper is acceptable. Each workflow can own an assembler that composes shared components and arranges the interface for its task. Node.js is therefore an accepted runtime prerequisite for these assemblers.
+- **Missing components:** add generally reusable controls to the kit first, then consume them from the workflow.
+
+Workflow input/result schemas and interpretation stay with their skills. The shared kit owns rendering, reusable controls, preview/comment UI, styling and component examples. Fungi's session lifecycle remains with the supporting `fungi` skill. Assembly places the page and dependencies under one retained directory so it respects Fungi's asset boundary. The implementation now follows these requirements. See the [shared UI feature](features/fungi-ui.md) and [verification run](verification/runs/2026-10-28-ui-kit.md) for checked behavior and remaining limits.
+
+
+## UI authoring boundary — accepted on 2026-10-28
+
+The user wants future skills to preserve a separation between running a workflow and authoring its UI, wherever a mechanical assembler or equivalent is suitable. `fungi-ui` is the central home for reusable components and supporting authoring/assembly utilities. A routine caller should not need to load its skill guide, inspect components or decide how to compose them. Those choices belong in the workflow implementation; the caller supplies workflow input, runs its helper and interprets the response.
+
+Agents creating or changing an interface may consult `fungi-ui` directly. This remains compatible with free workflow styling and composition. `fungi` still supplies runtime availability, launch and completion instructions. Current workflow entrypoints, shared guidance and the repository's future-skill guidance now make this distinction explicit. This is an instruction/documentation clarification; component and assembler behavior is unchanged.
+
+
+## Visual design research handoff — 2026-10-28
+
+The user finds the current shared UI too “bootstrap”-like and not modern enough. Their [design-reference collection](design-references.md) preserves the supplied names, URLs, three original images and the explicit concern that ShowAI feels excessive, messy and complex. The user requested documentation only for now and will hand research and spikes to another agent. No reference research, new design choice or UI implementation was undertaken for this request.
+
+
+## Theming decisions — accepted on 2026-10-28
+
+The user asked to pick up the [design-reference handoff](design-references.md) and spike multiple-theme support, with prototypes for a second theme beside the first. Before implementation they requested a grill-form round. The [eight-question round](evidence/2026-10-28-theming-planning/questions.json) showed three sketched directions beside the current theme in one switchable preview. The [submitted answers](evidence/2026-10-28-theming-planning/result.json) settle all eight:
+
+- **Second theme:** **Paper** (editorial) leads. Mono and Neutral were not vetoed, so they are built as comparison prototypes.
+- **Light and dark:** the second theme is light-only; the current theme stays dark.
+- **Selection:** each workflow names a default; a personal setting read by the assembler overrides it. Agents never choose a theme for routine use.
+- **Reach:** themes may change tokens and add scoped structural rules.
+- **Fonts:** bundle open-licence fonts. The user's note: "bundle fonts, no limit, as the theme library grows."
+- **First theme:** refresh it in this spike. The user's note: "the current theme is decent, but i wanna make some light changes to it - typography, colors, etc." This supersedes the recommendation to freeze it pixel-identical.
+- **Previews:** sandboxed previews stay as authored.
+- **Rejection criterion:** a theme that "feels like slop", per [10 tells of slop](https://godobject.dev/blog/10-tells-of-slop/).
+
+The agent's recommendations were accepted except on fonts (system-only proposed) and the first theme (freeze proposed). See the [direction sketches](evidence/2026-10-28-theming-planning/dir-paper.png).
+
+## Theming spike — implemented on 2026-10-28
+
+Implemented and checked; the visual result is **proposed** until the user reviews it. See the [shared UI feature](features/fungi-ui.md#themes) and [verification](verification/runs/2026-10-28-theming.md).
+
+- **Mechanism:** `ui.css` places components in a `fungi-base` cascade layer and themes in `fungi-theme`. Unlayered workflow CSS still overrides both. `data-theme` on `<html>` selects a theme; nested regions can carry another. About 45 `--ui-*` tokens cover colour, type, size and shape.
+- **Classic refresh (agent proposal):** warm charcoal neutrals with one ochre accent replace the lavender accent, the cyan chips and the amber draft status. IBM Plex Sans and Plex Mono replace system fonts, and radii are slightly tighter. The lavender and the five unrelated hues matched the article's first two tells.
+- **Paper:** Newsreader with Plex Mono labels, a warm paper ground and an ink-blue accent. Choices are ruled rows, tables use booktabs rules, and the reading column narrows.
+- **Prototypes:** Mono (IBM Plex Mono throughout, hairline boxes, dashed dividers) and Neutral (zinc, soft radii, Plex Sans) are for comparison only.
+- **Fonts:** latin and latin-ext WOFF2 subsets of Newsreader, IBM Plex Sans and IBM Plex Mono (Fontsource 5.3.0, OFL-1.1), about 0.9 MB. Templates now allow `font-src 'self'`. Inter and JetBrains Mono were avoided as named slop tells.
+- **Workflow CSS:** outcome and grill-form replaced literal colours and sizes with token references, so themes reach them.
+- **Selection:** the assembler reads `~/.config/fungi-ui/settings.json` (`{"theme":"paper"}`) and rejects unknown names. The gallery switches themes live.
+
+Open: which theme becomes the second theme (Paper is the candidate), whether the classic refresh is right, whether Mono and Neutral stay, and whether a dark Paper variant is wanted later. The window flashes the dark canvas before a light theme's CSS loads, because templates still declare `color-scheme: dark`; this has not been addressed.
+
+## Paper revision — accepted on 2026-10-28
+
+After reviewing the gallery, the user accepted the refreshed classic theme ("classic looks passable now") and Paper as the second theme, with three changes: "too much italics, and replace the font - use the same font as wikipedia. having a Dark Paper theme variant is also a good idea."
+
+- **Italics:** Paper no longer italicises recommendations or block quotes. Emphasis written in the content still renders.
+- **Wikipedia's fonts:** Paper uses Wikipedia's declared stacks. Headings are `'Linux Libertine', Georgia, Times, 'Source Serif 4', serif`; the body is the system `sans-serif`. Minor headings are bold sans, and major headings carry a hairline rule, as on Wikipedia. A probe of Wikipedia on this Mac showed Georgia headings (Linux Libertine is not installed) and Helvetica body, so Paper renders the same faces. Small labels keep IBM Plex Mono.
+- **Paper dark:** `paper-dark` shares Paper's type and structure, declared once in `paper.css`, on a warm dark ground with a light-blue accent.
+- **Fonts:** Newsreader is no longer used and was removed. The bundle is now about 0.3 MB of IBM Plex Sans and Mono.
+
+Mono and Neutral remain comparison prototypes; the user has not decided their fate. See the [revision checks](verification/runs/2026-10-28-theming-revision.md).
+
+## Theme cleanup — accepted on 2026-10-28
+
+The user deleted the Mono and Neutral prototypes ("mono and neutral can be deleted"). The kit now ships `classic` (default), `paper` and `paper-dark`.
+
+The user also reported poor contrast in classic's code blocks, with a screenshot. Sampling it showed the block sinking to `#100f0d` on the `#161513` page, a 1.05:1 surface step, with secondary-grey text. Code blocks now sit on a slightly lighter `--ui-code-bg` (`#211f1c` in classic) with a hairline border and primary text. Inline code uses the same tokens. The token was renamed from `--ui-sunken`, and region-comment captures now use `--ui-surface`. The theme check gates code text against its background. See the [final checks](verification/runs/2026-10-28-theming-final.md).
+
+The user accepted the possible dark canvas before a light theme's CSS loads ("no prblems"); no change is planned.

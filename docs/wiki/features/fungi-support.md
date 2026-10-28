@@ -1,6 +1,6 @@
 ---
 title: Shared interface support
-updated: 2026-10-27
+updated: 2026-10-28
 ---
 # Shared interface support
 
@@ -16,12 +16,13 @@ The host needs command/file access on the desktop machine. Runtime availability 
 
 ## Expected behavior
 
-- The calling skill owns its workflow, interface/assets, input, answer schema and interpretation.
-- Shared instructions launch the prepared interface, retain its exact receipt/environment, follow callback/manual delivery and collect once on a completion cue. No polling or extra waiter.
+- The calling skill owns workflow composition, input, answer schema and interpretation; [fungi-ui](fungi-ui.md) owns reusable components and their assembly helper.
+- Shared instructions choose a return route before launching: Codex callback via `auto`, local interactive Claude Code background Bash via `wait`, or another host's supported pending/background mechanism. Manual collection is the fallback when no suitable automatic route exists. `auto` alone does not select every host's return mechanism.
+- Receipt-based launches retain the exact receipt/environment and collect once on a completion cue. A completed `wait` already contains the result and needs no collect or user “done.” No polling or extra waiter.
 - For an optional report, opening does not block already-authorized independent work or require acknowledgment. Submission still closes the window; close without submission is not feedback.
 - Only a supported submitted result is passed to the caller for schema validation. Cancellation, close, failure and pending do not become answers.
 - Shared artifact handling preserves returned files and maps keys to workflow references. Explicit reopen creates a new linked session; it does not rewrite the old result.
-- Interface authors consult relevant installed help when needed. Existing interfaces use their prepared invocation without rereading the full manual.
+- Interface authors consult relevant installed help and the UI kit when needed. Existing interfaces use their prepared invocation without rereading the full manual or loading the component guide; their assemblers handle UI dependencies.
 - General recovery and diagnostics live with the supporting skill. Each workflow contains one dependency instruction and may show its concrete launch command.
 
 ## Verification recipes and limits
@@ -32,6 +33,7 @@ A later behavioral trial should invoke a caller with a missing, unrecognized and
 
 ## Verification history
 
+- [Next steps and delivery guidance](../verification/runs/2026-10-27-outcome-next-steps.md) — diagnosed a real Claude manual fallback and corrected route selection; fresh Claude continuation is outside the checked scope.
 - [Outcome implementation checks](../verification/runs/2026-10-27-outcome.md) — optional-report lifecycle and an independent unavailable-PATH instruction trial.
 
 - [Shared support extraction checks](../verification/runs/2026-10-27-shared-support.md)

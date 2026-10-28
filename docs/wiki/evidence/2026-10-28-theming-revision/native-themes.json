@@ -1,0 +1,89 @@
+{
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "directory": "/var/folders/00/h_k67s0j5dq0qvg6ylqysk2w0000gn/T/fungi-theme-smoke-CiCuCi",
+  "version": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "results": [
+    {
+      "theme": "classic",
+      "session": "b07999c632cc41e4702adc59ea536cb6",
+      "fixture": "theme",
+      "background": "rgb(22, 21, 19)",
+      "bgToken": "#161513",
+      "bodyFont": "IBM Plex Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans loaded",
+        "IBM Plex Sans unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    },
+    {
+      "theme": "mono",
+      "session": "166f7f6456148740e8f3c97544664f5d",
+      "fixture": "theme",
+      "background": "rgb(250, 250, 250)",
+      "bgToken": "#fafafa",
+      "bodyFont": "IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, monospace",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    },
+    {
+      "theme": "neutral",
+      "session": "3fb3677124c211ca47215bd5fe8d09dc",
+      "fixture": "theme",
+      "background": "rgb(255, 255, 255)",
+      "bgToken": "#ffffff",
+      "bodyFont": "IBM Plex Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans loaded",
+        "IBM Plex Sans unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    },
+    {
+      "theme": "paper",
+      "session": "bc2cdc766c4f1fd8d1970a4d0f266c66",
+      "fixture": "theme",
+      "background": "rgb(251, 249, 243)",
+      "bgToken": "#fbf9f3",
+      "bodyFont": "sans-serif",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    },
+    {
+      "theme": "paper-dark",
+      "session": "3b5645200cb796cc7873c94fa112f38f",
+      "fixture": "theme",
+      "background": "rgb(25, 24, 21)",
+      "bgToken": "#191815",
+      "bodyFont": "sans-serif",
+      "fonts": [
+        "IBM Plex Mono loaded",
+        "IBM Plex Mono unloaded",
+        "IBM Plex Sans unloaded"
+      ],
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wails.io",
+      "failures": []
+    }
+  ],
+  "result": "Passed"
+}

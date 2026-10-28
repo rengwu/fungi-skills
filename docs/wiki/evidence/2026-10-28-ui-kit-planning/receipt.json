@@ -1,0 +1,18 @@
+{
+  "protocol": 1,
+  "kind": "opened",
+  "session": "92cf5fdb77e902102be8c3eed519d83f",
+  "delivery": {
+    "mode": "callback",
+    "adapter": "codex",
+    "state": "armed"
+  },
+  "collect": [
+    "/Users/rengwu/.fungi/bin/fungi",
+    "collect",
+    "92cf5fdb77e902102be8c3eed519d83f"
+  ],
+  "collectEnv": {
+    "FUNGI_STATE_DIR": "/Users/rengwu/Library/Application Support/fungi/sessions"
+  }
+}

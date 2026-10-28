@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-28T10:09:15.123467+00:00",
+  "gitBase": "d402fae5800c262e07ef2c8faaa3ab2aec335e02",
+  "dirty": true,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "node": "v22.19.0",
+  "fungi": {
+    "kind": "version",
+    "protocol": 1,
+    "version": "v0.1.0-alpha.2"
+  },
+  "binary": "/Users/rengwu/.fungi/bin/fungi",
+  "binarySha256": "6b9e60866ff93d216bde63cbbabc93eb2340674298826fbb3aebab0c21530a29",
+  "userReport": {
+    "screenshotSamples": {
+      "page": "#161513",
+      "codeBlock": "#100f0d",
+      "codeText": "#c3beb3"
+    }
+  },
+  "sourceSha256": {
+    "scripts/ui-theme-native-smoke.mjs": "da2c8fd614b2fe24ce71717c6b5fac361e9d147f7e8b278417aaa71a08c5564d",
+    "scripts/ui-theme-smoke.mjs": "9a17195ec5575233600ec8aa19178e6b7557b2465fa1c0e58e8ad92b6a173e18",
+    "scripts/ui.test.mjs": "de2051ce03232196d8d8a1d70d4b98e49e271d6cacf4df61c58171248056efd4",
+    "skills/fungi-ui/assets/fonts.css": "d7fb19cda31494139731ca4ea43cd8cc9230b66c02561827173cd9ff4b9cd0b5",
+    "skills/fungi-ui/assets/themes/paper-dark.css": "2e44dba4ffd24d4b5a9c8554abc8c7f127b4966a08644949b3c25474912e6c5c",
+    "skills/fungi-ui/assets/themes/paper.css": "d0b6885e3bc8dbbab342d7a48b7c63ce7a3c59f8a35fa0f6a47c1af221b5e512",
+    "skills/fungi-ui/assets/ui.css": "ff049093654815aaf77b8299a73d026a0935d29aa65adff466f057c2b982c2dc",
+    "skills/fungi-ui/references/components.md": "89a215c9fc8c1cca59b6bb365d53771a347139ff41eae411e11654cc6061ba83"
+  }
+}

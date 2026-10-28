@@ -1,0 +1,5 @@
+{
+  "scope": "Shared gallery components, headless Chromium with injected public bridge",
+  "result": "Failed",
+  "error": "Error: Unknown key: \"Meta+KeyZ\"\n    at assert (file:///private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/util/assert.js:15:15)\n    at #keyDescriptionForString (file:///private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/cdp/Input.js:72:9)\n    at CdpKeyboard.down (file:///private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/cdp/Input.js:28:58)\n    at CdpKeyboard.press (file:///private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/cdp/Input.js:143:20)\n    at file:///Users/rengwu/Desktop/Projects/fungi-skills/scripts/ui-browser-smoke.mjs:34:22"
+}

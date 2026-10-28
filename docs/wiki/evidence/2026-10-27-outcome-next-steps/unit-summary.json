@@ -1,0 +1,8 @@
+{
+  "command": "node --test scripts/*.test.mjs",
+  "result": "Passed",
+  "tests": 15,
+  "passed": 15,
+  "failed": 0,
+  "note": "Summary of the observed test run earlier in this change. No raw transcript retained; subsequent edits changed instructions and smoke drivers, not model behavior."
+}

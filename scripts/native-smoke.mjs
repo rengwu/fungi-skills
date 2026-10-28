@@ -1,3 +1,4 @@
+import {assemble} from '../skills/fungi-ui/scripts/assemble.mjs';
 // Disposable fixture only. Drives the actual prepared page and public bridge.
 // A bounded machine check, never a waiter or fake answer in a human interview.
 import {mkdtemp,cp,readFile,writeFile,mkdir} from 'node:fs/promises';
@@ -10,8 +11,7 @@ import assert from 'node:assert/strict';
 
 const binary=path.resolve(process.argv[2]??path.join(os.homedir(),'.fungi/bin/fungi'));
 const directory=await mkdtemp(path.join(os.tmpdir(),'fungi-grill-smoke-'));
-const assets=path.join(directory,'assets');
-await cp(new URL('../skills/grill-form/assets/',import.meta.url),assets,{recursive:true});
+const {directory:assets}=await assemble({assets:new URL('../skills/grill-form/assets/',import.meta.url),entry:'form.html',theme:'classic'});
 let html=await readFile(path.join(assets,'form.html'),'utf8');
 await writeFile(path.join(assets,'form.html'),html.replace('</body>','<script type="module" src="fixture.mjs"></script></body>'));
 await writeFile(path.join(assets,'fixture.mjs'),String.raw`
@@ -27,6 +27,16 @@ try{
  const editor=document.querySelectorAll('.notes-editor')[1];
  if(!ready.draft){
   document.querySelector('input[name="choice"]').click();
+  await new Promise(r=>setTimeout(r,300));
+  document.querySelector('.comment-toggle').click();
+  const surface=document.querySelector('.comment-surface');
+  surface.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
+  surface.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
+  await until(()=>document.querySelector('.comment-dialog[open] .notes-editor'));
+  const comment=document.querySelector('.comment-dialog .notes-editor');comment.textContent='Native region comment';comment.dispatchEvent(new InputEvent('input',{bubbles:true}));
+  document.querySelector('.save-comment').click();
+  await until(()=>!document.querySelector('.comment-dialog'));
+  document.querySelector('.prototype').contentWindow.postMessage('fixture-final','*');
   editor.focus();editor.textContent='Native smoke ';
   editor.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:'Native smoke '}));
   const selection=getSelection(),range=document.createRange();range.selectNodeContents(editor);range.collapse(false);selection.removeAllRanges();selection.addRange(range);
@@ -46,7 +56,7 @@ try{
 const input={projectName:'Disposable native check',title:'Synthetic fixture — not project decisions',questions:[
  {id:'choice',prompt:'Fixture choice',options:['First','Second'],required:true},
  {id:'notes',prompt:'Fixture notes and PNG'},
- {id:'preview',prompt:'Fixture diagram and preview',context:'```mermaid\nflowchart LR\n A --> B\n```',preview:{state:{size:16},html:'<p>Fixture preview</p><script>setTimeout(()=>grill.setState({size:20}),100)</script>'}},
+ {id:'preview',prompt:'Fixture diagram and preview',context:'```mermaid\nflowchart LR\n A --> B\n```',preview:{state:{size:16},html:'<p>Fixture preview</p><script>setTimeout(()=>{if(grill.state.size===16)grill.setState({size:20})},100);addEventListener("message",e=>{if(e.data==="fixture-final")grill.setState({size:22})})</script>'}},
  {id:'untouched',prompt:'Leave blank'}
 ]};
 await writeFile(path.join(directory,'input.json'),JSON.stringify(input));
@@ -62,7 +72,10 @@ try{
  assert.equal(result.outcome,'submitted');assert.equal(result.data.schema,'grill-form/v1',JSON.stringify(result));
  assert.equal(result.data.answers[0].choice,'First');
  assert.match(result.data.answers[1].notes,/Native smoke.*\[Image #1\]/);
- assert.deepEqual(result.data.answers[2].states.main,{size:20});
+ assert.deepEqual(result.data.answers[2].states.main,{size:22});
+ assert.equal(result.data.answers[2].comments[0].notes,'Native region comment');
+ assert.deepEqual(result.data.answers[2].comments[0].state,{size:20});
+ assert.ok(result.data.answers[2].comments[0].region.width>=4);
  assert.equal(result.data.answers[3].status,'untouched');
  assert.equal(result.artifacts.length,1);
  const bytes=await readFile(result.artifacts[0].path);

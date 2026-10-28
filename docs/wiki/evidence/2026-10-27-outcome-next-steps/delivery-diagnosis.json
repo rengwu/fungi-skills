@@ -1,0 +1,19 @@
+{
+  "scope": "Read-only diagnosis; no result collection or new human session",
+  "launch": {
+    "protocol": 1,
+    "session": "cfeefc940224a3202212881361035c60",
+    "source": "/Users/rengwu/Desktop/Projects/fungi-skills/skills/outcome/assets/outcome.html",
+    "delivery": {
+      "mode": "manual",
+      "reason": "no supported exact-caller callback detected; use a host-managed --delivery wait call or say done and collect once"
+    }
+  },
+  "installedCapability": {
+    "auto": "Exact inherited CODEX_THREAD_ID + codex queue. Otherwise explicit manual fallback. No discovery from latest conversations.",
+    "claude": "wait via native background Bash in local interactive sessions; headless/cloud modes have time limits. Use manual if the host cannot sustain a human wait.",
+    "wait": "One pending shell tool; no Fungi human timeout. Your harness must keep it pending or provide automatic background completion. Do not poll."
+  },
+  "cause": "The shared skill prescribed auto in every host; Claude local interactive requires host-managed wait for automatic return.",
+  "followUp": "Instructions corrected; live Claude automatic continuation not rerun."
+}
