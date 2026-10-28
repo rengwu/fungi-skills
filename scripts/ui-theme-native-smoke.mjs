@@ -26,7 +26,7 @@ try{
 const input={schema:'outcome/v1',id:'native-theme',title:'Native theme check',markdown:'Body text, `code` and a diagram.\n\n```mermaid\nflowchart LR\n A --> B\n```'};
 const evidence={binary,directory,version:await run(['version']),results:[]};
 for(const theme of await themes()){
- const {directory:assets}=await assemble({assets:new URL('../skills/outcome/assets/',import.meta.url),entry:'outcome.html',theme});
+ const {directory:assets}=await assemble({assets:new URL('../skills/show-outcome/assets/',import.meta.url),entry:'outcome.html',theme});
  const html=await readFile(path.join(assets,'outcome.html'),'utf8');
  await writeFile(path.join(assets,'outcome.html'),html.replace('</body>','<script type="module" src="fixture.mjs"></script></body>'));
  await writeFile(path.join(assets,'fixture.mjs'),fixture);

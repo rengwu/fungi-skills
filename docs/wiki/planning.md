@@ -99,7 +99,7 @@ Implementation choice: share grill-form's prepared page, preview/comment/image c
 
 The development shell still lacks `fungi` on PATH. The normal skill availability gate remains intact; native development tests explicitly name the installed binary and isolate their sessions. The preparation interview used the user's existing jstack form; no Fungi installation or shell settings were changed.
 
-See [Outcome behavior](features/outcome.md) and [verification](verification/runs/2026-10-27-outcome.md). Daily usability, long-idle behavior and real callback delivery for this new combined flow remain follow-up observations, not prerequisites to shipping the local skill.
+See [Outcome behavior](features/show-outcome.md) and [verification](verification/runs/2026-10-27-outcome.md). Daily usability, long-idle behavior and real callback delivery for this new combined flow remain follow-up observations, not prerequisites to shipping the local skill.
 
 ## Outcome simplification — accepted on 2026-10-27
 
@@ -214,3 +214,9 @@ The user deleted the Mono and Neutral prototypes ("mono and neutral can be delet
 The user also reported poor contrast in classic's code blocks, with a screenshot. Sampling it showed the block sinking to `#100f0d` on the `#161513` page, a 1.05:1 surface step, with secondary-grey text. Code blocks now sit on a slightly lighter `--ui-code-bg` (`#211f1c` in classic) with a hairline border and primary text. Inline code uses the same tokens. The token was renamed from `--ui-sunken`, and region-comment captures now use `--ui-surface`. The theme check gates code text against its background. See the [final checks](verification/runs/2026-10-28-theming-final.md).
 
 The user accepted the possible dark canvas before a light theme's CSS loads ("no prblems"); no change is planned.
+
+## Skill rename — requested on 2026-10-28
+
+The user requested renaming `outcome` to `show-outcome`. The skill directory, invocation name, display name, Codex skill link, test scripts, README and current wiki pages now use `show-outcome`. The feature page is [Show outcome](features/show-outcome.md) (`FEAT-show-outcome`).
+
+The data and page names stay: the `outcome/v1` schema, `outcome.html` and the `outcome.json` example. They name the report being shown, not the skill, and keeping them lets existing drafts and session results still validate. Dated entries above, verification runs and evidence keep the old name as history; only their links now point to the renamed feature page. Sessions opened directly from the old source path, before assembled bundles existed, are not migrated.

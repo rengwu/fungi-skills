@@ -17,7 +17,7 @@ const grill={projectName:'fungi-skills',title:'Second theme review',questions:[
  {id:'concerns',prompt:'Anything that feels off in this theme?'}]};
 const pages=[
  ['gallery',new URL('../skills/fungi-ui/examples/',import.meta.url),'gallery.html',null,'.diagram[data-render-state="ready"]'],
- ['outcome',new URL('../skills/outcome/assets/',import.meta.url),'outcome.html',outcome,'.diagram[data-render-state="ready"]'],
+ ['outcome',new URL('../skills/show-outcome/assets/',import.meta.url),'outcome.html',outcome,'.diagram[data-render-state="ready"]'],
  ['grill-form',new URL('../skills/grill-form/assets/',import.meta.url),'form.html',grill,'#submit'],
 ];
 const types={'.html':'text/html','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.woff2':'font/woff2'};

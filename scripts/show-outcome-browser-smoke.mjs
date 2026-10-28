@@ -7,10 +7,10 @@ import path from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 const [modulePath,chromePath,outputPath]=process.argv.slice(2);
-if(!modulePath||!chromePath||!outputPath)throw new Error('Usage: node scripts/outcome-browser-smoke.mjs PUPPETEER_MODULE CHROME OUTPUT_DIR');
+if(!modulePath||!chromePath||!outputPath)throw new Error('Usage: node scripts/show-outcome-browser-smoke.mjs PUPPETEER_MODULE CHROME OUTPUT_DIR');
 const {default:puppeteer}=await import(pathToFileURL(path.resolve(modulePath)).href);
 const output=path.resolve(outputPath);await mkdir(output,{recursive:true});
-const {directory:root}=await assemble({assets:new URL('../skills/outcome/assets/',import.meta.url),entry:'outcome.html',theme:'classic'});
+const {directory:root}=await assemble({assets:new URL('../skills/show-outcome/assets/',import.meta.url),entry:'outcome.html',theme:'classic'});
 const server=createServer(async(req,res)=>{
  try{
   const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Outcome"
-  short_description: "Rich result reports with optional feedback"
-  default_prompt: "Use $outcome to present results in its prepared window, with optional Notes and a detailed CLI summary."

@@ -3,7 +3,7 @@ import {pathToFileURL} from 'node:url';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
-import {normalizeInput,snapshot,restoreDraft,NOTES_ID} from '../skills/outcome/assets/model.mjs';
+import {normalizeInput,snapshot,restoreDraft,NOTES_ID} from '../skills/show-outcome/assets/model.mjs';
 const limits={jsonBytes:1048576,artifactBytes:20971520,totalArtifactBytes:104857600};
 const input={schema:'outcome/v1',id:'round-7',title:'Recorded, not implemented',markdown:'**Recorded.**\n\nA proposal remains open.'};
 const spec=normalizeInput(input);
@@ -108,7 +108,7 @@ test('unknown schema and invalid report fields fail clearly',()=>{
 });
 
 test('outcome owns its page and modules, with no runtime dependency on the interview skill',async()=>{
- const root=new URL('../skills/outcome/',import.meta.url);
+ const root=new URL('../skills/show-outcome/',import.meta.url);
  for(const file of ['SKILL.md','references/authoring.md','assets/outcome.html','assets/outcome.mjs','assets/model.mjs']){
   const text=await readFile(new URL(file,root),'utf8');assert.doesNotMatch(text,/\.\.\/grill-form|\.\.\/\.\.\/grill-form/);
  }

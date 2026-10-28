@@ -11,7 +11,7 @@ The bundled [page](../assets/outcome.html) needs only this input:
 }
 ```
 
-Use the [workflow assembler](../scripts/assemble.mjs) and [launch instructions](../SKILL.md). Install `outcome`, `fungi-ui` and `fungi` as siblings. Node.js 22+ assembles a retained page bundle containing the shared components and this workflow's composition; the source HTML is a template, not a standalone entry point.
+Use the [workflow assembler](../scripts/assemble.mjs) and [launch instructions](../SKILL.md). Install `show-outcome`, `fungi-ui` and `fungi` as siblings. Node.js 22+ assembles a retained page bundle containing the shared components and this workflow's composition; the source HTML is a template, not a standalone entry point.
 
 ## Input
 

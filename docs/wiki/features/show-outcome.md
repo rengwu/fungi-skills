@@ -1,18 +1,18 @@
 ---
-title: Outcome
+title: Show outcome
 updated: 2026-10-28
 ---
-# Outcome
+# Show outcome
 
-**FEAT-outcome**
+**FEAT-show-outcome**
 
 Present results in a rich local window with selectable follow-up actions, optional feedback and a detailed CLI summary. Current basis: [independent workflows](../planning.md#independent-workflows-accepted-on-2026-10-27) and [selectable next steps](../planning.md#outcome-next-steps-and-quiet-ui-accepted-on-2026-10-27), superseding earlier combined sessions and custom layouts.
 
 ## Entry points and prerequisites
 
-Invoke outcome for the conversation. Once enabled, favor using it when unsure; frequent windows are welcome. Install `skills/outcome`, `skills/fungi-ui` and `skills/fungi` as siblings, with Node.js 22+ for assembly. No other workflow is required. Fungi must resolve on PATH with its expected protocol-1 version response.
+Invoke show-outcome for the conversation; it was named `outcome` until 2026-10-28. Once enabled, favor using it when unsure; frequent windows are welcome. Install `skills/show-outcome`, `skills/fungi-ui` and `skills/fungi` as siblings, with Node.js 22+ for assembly. No other workflow is required. Fungi must resolve on PATH with its expected protocol-1 version response.
 
-Run `skills/outcome/scripts/assemble.mjs --input INPUT.json` and open the returned `html`/`input` paths. The composition template and schema remain with outcome; reusable rendering, controls, inline image editing and libraries come from the [shared UI kit](fungi-ui.md). Neither workflow imports the other.
+Run `skills/show-outcome/scripts/assemble.mjs --input INPUT.json` and open the returned `html`/`input` paths. The composition template and `outcome/v1` schema remain with show-outcome; reusable rendering, controls, inline image editing and libraries come from the [shared UI kit](fungi-ui.md). Neither workflow imports the other.
 
 ## Expected behavior
 
@@ -29,11 +29,11 @@ Run `skills/outcome/scripts/assemble.mjs --input INPUT.json` and open the return
 
 ## Verification recipes
 
-Use [setup](../verification/setup.md#outcome-checks).
+Use [setup](../verification/setup.md#show-outcome-checks).
 
 1. `node --test scripts/*.test.mjs`: validate reports, optional selections/Notes, recommendation reasons without implicit selection, images/drafts, malformed/oversize data, rejection of combined input and asset independence, plus existing interview transport tests.
-2. `node scripts/outcome-native-smoke.mjs /absolute/path/to/fungi OUTPUT.json`: assemble outcome and the shared kit into a disposable directory; render Markdown/table/diagram/image and the stylesheet; save Notes + PNG, close, reopen and submit; separately reopen multiple selections and submit without Notes; reject questions and unknown schemas.
-3. `node scripts/outcome-browser-smoke.mjs PUPPETEER_MODULE CHROME OUTPUT_DIR`: inspect 1200/420 px screenshots, recommendation markers/reasons and keyboard/pointer selection with an injected public bridge. Clearing feedback disables submission; a failed save or submit preserves edits/selections; duplicate clicks do not double-submit.
+2. `node scripts/show-outcome-native-smoke.mjs /absolute/path/to/fungi OUTPUT.json`: assemble show-outcome and the shared kit into a disposable directory; render Markdown/table/diagram/image and the stylesheet; save Notes + PNG, close, reopen and submit; separately reopen multiple selections and submit without Notes; reject questions and unknown schemas.
+3. `node scripts/show-outcome-browser-smoke.mjs PUPPETEER_MODULE CHROME OUTPUT_DIR`: inspect 1200/420 px screenshots, recommendation markers/reasons and keyboard/pointer selection with an injected public bridge. Clearing feedback disables submission; a failed save or submit preserves edits/selections; duplicate clicks do not double-submit.
 4. `node scripts/native-smoke.mjs /absolute/path/to/fungi OUTPUT.json`: exercise the restored standalone interview's normal native flow separately.
 
 ## Coverage and limits

@@ -5,7 +5,7 @@ result: Passed
 ---
 # Independent outcome and grill-form checks
 
-Passed for the separation of [Outcome](../../features/outcome.md) and [Grill form](../../features/grill-form.md). The [accepted direction](../../planning.md#independent-workflows-accepted-on-2026-10-27) restores separate sessions, prepared layouts and a detailed CLI summary.
+Passed for the separation of [Outcome](../../features/show-outcome.md) and [Grill form](../../features/grill-form.md). The [accepted direction](../../planning.md#independent-workflows-accepted-on-2026-10-27) restores separate sessions, prepared layouts and a detailed CLI summary.
 
 ## Build and checks
 

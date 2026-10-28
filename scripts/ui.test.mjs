@@ -8,7 +8,7 @@ import {assemble,themes} from '../skills/fungi-ui/scripts/assemble.mjs';
 test('each assembled workflow retains input and resolves its own schema against the shared kit',async()=>{
  const dir=await mkdtemp(path.join(tmpdir(),'ui-assembly-test-')),input=path.join(dir,'input.json');
  await writeFile(input,JSON.stringify({title:'Original'}));
- for(const [skill,entry] of [['grill-form','form.html'],['outcome','outcome.html']]){
+ for(const [skill,entry] of [['grill-form','form.html'],['show-outcome','outcome.html']]){
   const bundle=await assemble({assets:new URL('../skills/'+skill+'/assets/',import.meta.url),entry,input});
   const page=await readFile(bundle.html,'utf8');
   for(const [,file] of page.matchAll(/(?:href|src)="([^":]+)"/g))await access(path.join(bundle.directory,file));
@@ -24,7 +24,7 @@ test('each assembled workflow retains input and resolves its own schema against 
 });
 test('a theme comes from the explicit option, then the personal setting, then the template default',async()=>{
  const dir=await mkdtemp(path.join(tmpdir(),'ui-theme-test-')),settings=path.join(dir,'settings.json');
- const options={assets:new URL('../skills/outcome/assets/',import.meta.url),entry:'outcome.html',settings};
+ const options={assets:new URL('../skills/show-outcome/assets/',import.meta.url),entry:'outcome.html',settings};
  const tag=async bundle=>(await readFile(bundle.html,'utf8')).match(/<html\b[^>]*>/)[0];
  const fallback=await assemble(options);assert.equal(fallback.theme,'classic');assert.equal(await tag(fallback),'<html lang="en" data-theme="classic">');
  await writeFile(settings,JSON.stringify({theme:'paper'}));

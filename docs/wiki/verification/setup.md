@@ -28,21 +28,21 @@ Human trials use a separate unique input directory and the shared skill's host-s
 
 Build identity: early runs predate Git and retain their SHA-256 manifests. For new runs, record the tested Git revision and any dirty-source fingerprint, plus the installed executable hash, version, OS and Node version. A sorted SHA-256 manifest remains useful for portable skill copies. Fungi source is dirty and is not the tested binary’s identity. Generated wiki HTML is not a behavior fingerprint.
 
-## Outcome checks
+## Show-outcome checks
 
 From the repository root:
 
 ```sh
 node --test scripts/*.test.mjs
-node scripts/outcome-native-smoke.mjs /Users/rengwu/.fungi/bin/fungi docs/wiki/evidence/2026-10-27-outcome-independent/native.json
+node scripts/show-outcome-native-smoke.mjs /Users/rengwu/.fungi/bin/fungi docs/wiki/evidence/2026-10-27-outcome-independent/native.json
 node scripts/native-smoke.mjs /Users/rengwu/.fungi/bin/fungi docs/wiki/evidence/2026-10-27-outcome-independent/grill-regression.json
-python3 /Users/rengwu/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/outcome
-node scripts/outcome-browser-smoke.mjs /private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' docs/wiki/evidence/2026-10-27-outcome-independent
+python3 /Users/rengwu/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/show-outcome
+node scripts/show-outcome-browser-smoke.mjs /private/tmp/imparo-learnharness-reference/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' docs/wiki/evidence/2026-10-27-outcome-independent
 ```
 
 The browser driver takes an already-installed Puppeteer module and Chromium executable; those absolute paths identify this machine's existing tools, not runtime skill dependencies. It starts an isolated headless browser and loopback fixture server, blocks external requests, injects a public page-API test double, captures desktop/narrow screenshots, and checks save/submit error recovery. The helper closes its browser/server on completion. The native driver exercises real controls/public Fungi APIs in isolated synthetic sessions; explicit absolute binary paths are for development tests, not a runtime fallback for the skill's PATH gate.
 
-Use a fresh evidence destination for later runs. Native drivers print their retained temporary directories; evidence JSON includes exact session IDs. Preserve relevant artifact bytes and screenshots before cleaning only the fixture directory. Do not touch human sessions. Fingerprint current skill/script bytes and the tested executable; then run metadata checks and rebuild/check the wiki. Outcome owns `skills/outcome/assets/outcome.html`; grill-form owns its original page. The outcome native driver assembles outcome plus the shared kit, without the interview skill. Check each workflow with its `fungi` and `fungi-ui` siblings independently.
+Use a fresh evidence destination for later runs. Native drivers print their retained temporary directories; evidence JSON includes exact session IDs. Preserve relevant artifact bytes and screenshots before cleaning only the fixture directory. Do not touch human sessions. Fingerprint current skill/script bytes and the tested executable; then run metadata checks and rebuild/check the wiki. Show-outcome owns `skills/show-outcome/assets/outcome.html`; grill-form owns its original page. The show-outcome native driver assembles show-outcome plus the shared kit, without the interview skill. Check each workflow with its `fungi` and `fungi-ui` siblings independently.
 
 
 ## Shared UI kit checks

@@ -117,6 +117,6 @@ Write workflow CSS against tokens so every theme applies: `color:var(--ui-text-3
 | Sizes | `--ui-font-size`, `--ui-line-height`, `--ui-page-width`, `--ui-reading-size`, `--ui-reading-line`, `--ui-reading-width`, `--ui-title-size`, `--ui-title-weight`, `--ui-title-tracking`, `--ui-legend-size`, `--ui-subhead-size`, `--ui-heading-weight`, `--ui-control-size`, `--ui-small-size`, `--ui-code-size` |
 | Shape | `--ui-radius-sm`, `--ui-radius`, `--ui-radius-lg` |
 
-The reading tokens suit report-style pages: set `--ui-font-size:var(--ui-reading-size)` and the matching line and width tokens on `body`, as outcome does. Diagrams receive the theme through Pele's `--pele-*` variables. Sandboxed previews are never themed; they show the design under review.
+The reading tokens suit report-style pages: set `--ui-font-size:var(--ui-reading-size)` and the matching line and width tokens on `body`, as show-outcome does. Diagrams receive the theme through Pele's `--pele-*` variables. Sandboxed previews are never themed; they show the design under review.
 
 To add a theme, create `assets/themes/NAME.css` with a `[data-theme=NAME]` block that sets `color-scheme` and every token, then add any structural rules under the same selector. Import it in `ui.css` with `layer(fungi-theme)`. Bundled fonts go in `vendor/fonts` and `fonts.css`. Validate with `scripts/ui-theme-smoke.mjs`, which fails on text contrast below 4.5:1 (including code on its background), a focus ring below 3:1, missing fonts or narrow-layout overflow.

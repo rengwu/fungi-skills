@@ -1,8 +1,8 @@
 ---
-name: outcome
-description: Present results in a Fungi window with optional feedback and a detailed, slightly shorter CLI summary. Use when requested or when useful in a conversation where the user has enabled outcome.
+name: show-outcome
+description: Present results in a Fungi window with optional feedback and a detailed, slightly shorter CLI summary. Use when requested or when useful in a conversation where the user has enabled show-outcome.
 ---
-# Outcome
+# Show outcome
 
 Read [fungi](../fungi/SKILL.md) for presenting an interface and receiving feedback.
 
@@ -44,7 +44,7 @@ Save as `outcome.json`:
 Run the prepared [assembler](scripts/assemble.mjs) with Node.js 22+ and the installed `fungi-ui` sibling. Reading its component guide is unnecessary for routine use:
 
 ```sh
-node /absolute/path/to/outcome/scripts/assemble.mjs --input /absolute/path/to/outcome.json
+node /absolute/path/to/show-outcome/scripts/assemble.mjs --input /absolute/path/to/outcome.json
 ```
 
 Launch the returned `html` and `input` paths with the shared skill's chosen delivery mode and tool settings. Keep the bundle for the session and any reopening.

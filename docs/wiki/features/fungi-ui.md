@@ -41,7 +41,7 @@ See [setup](../verification/setup.md#shared-ui-kit-checks).
 
 1. Run `node --test scripts/*.test.mjs`: workflow schemas, references/drafts, image offsets and assembly isolation/module resolution.
 2. Run both native smoke drivers against the installed binary in isolated synthetic sessions: save/Close/reopen, inline images, choices, preview and captured region state.
-3. Run `scripts/outcome-browser-smoke.mjs`: recommendation accessibility, selection, draft/submit retry, narrow table layout and screenshots.
+3. Run `scripts/show-outcome-browser-smoke.mjs`: recommendation accessibility, selection, draft/submit retry, narrow table layout and screenshots.
 4. Run `scripts/ui-browser-smoke.mjs`: the gallery's real controls with an injected public bridge, including style overrides, image editing, preview state, keyboard region selection and distinct captured state. Inspect screenshots.
 5. Run each workflow assembler and `skills/fungi-ui/scripts/gallery.mjs`; validate four skill frontmatters and relative documentation links. Confirm installed sibling paths resolve.
 6. Run `scripts/ui-theme-smoke.mjs` (every theme × gallery, outcome and grill-form: fonts, tokens, contrast, icons, 420 px) and `scripts/ui-theme-native-smoke.mjs` (tokens and fonts in Fungi's WebView). Inspect the screenshots.

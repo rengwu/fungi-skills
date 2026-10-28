@@ -9,7 +9,7 @@ import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 const binary=path.resolve(process.argv[2]??path.join(os.homedir(),'.fungi/bin/fungi'));
 const directory=await mkdtemp(path.join(os.tmpdir(),'fungi-outcome-smoke-'));
-const {directory:assets}=await assemble({assets:new URL('../skills/outcome/assets/',import.meta.url),entry:'outcome.html',theme:'classic'});
+const {directory:assets}=await assemble({assets:new URL('../skills/show-outcome/assets/',import.meta.url),entry:'outcome.html',theme:'classic'});
 const html=await readFile(path.join(assets,'outcome.html'),'utf8');
 await writeFile(path.join(assets,'outcome.html'),html.replace('</body>','<script type="module" src="fixture.mjs"></script></body>'));
 const png='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aB9kAAAAASUVORK5CYII=';

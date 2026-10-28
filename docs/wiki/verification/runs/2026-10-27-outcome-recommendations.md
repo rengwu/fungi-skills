@@ -5,7 +5,7 @@ result: Passed
 ---
 # Outcome recommendations
 
-Passed for the selected [Outcome](../../features/outcome.md) scenarios. The user identified that next steps looked equally weighted and should include a recommendation. Each action now accepts an optional plain-text `recommendation` reason. The page renders “Recommended” and that reason; the skill directs authors to recommend the strongest next action and put it first. Choices remain unchecked by default.
+Passed for the selected [Outcome](../../features/show-outcome.md) scenarios. The user identified that next steps looked equally weighted and should include a recommendation. Each action now accepts an optional plain-text `recommendation` reason. The page renders “Recommended” and that reason; the skill directs authors to recommend the strongest next action and put it first. Choices remain unchecked by default.
 
 ## Build and scope
 

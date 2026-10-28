@@ -5,7 +5,7 @@ result: Passed
 ---
 # Outcome simplification checks
 
-Passed for the instruction and reference changes to [Outcome](../../features/outcome.md).
+Passed for the instruction and reference changes to [Outcome](../../features/show-outcome.md).
 
 The skill shrank from 968 to 155 words; its authoring reference from 771 to 254. Accepted directions and counts are in the [change record](../../evidence/2026-10-27-outcome-simplification/changes.json). The [check record](../../evidence/2026-10-27-outcome-simplification/checks.json) fingerprints the edited instructions and metadata.
 

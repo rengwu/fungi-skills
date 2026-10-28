@@ -5,7 +5,7 @@ result: Passed
 ---
 # Outcome next steps and delivery guidance
 
-Passed for the exercised [Outcome](../../features/outcome.md) UI/model scenarios and the instruction/diagnostic checks of [shared support](../../features/fungi-support.md). The requested behavior is recorded in [planning](../../planning.md#outcome-next-steps-and-quiet-ui-accepted-on-2026-10-27). Fresh automatic continuation in the user's Claude session is outside this run's tested scope.
+Passed for the exercised [Outcome](../../features/show-outcome.md) UI/model scenarios and the instruction/diagnostic checks of [shared support](../../features/fungi-support.md). The requested behavior is recorded in [planning](../../planning.md#outcome-next-steps-and-quiet-ui-accepted-on-2026-10-27). Fresh automatic continuation in the user's Claude session is outside this run's tested scope.
 
 ## Build and scope
 
