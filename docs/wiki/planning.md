@@ -1,6 +1,6 @@
 ---
 title: Plan and decisions
-updated: 2026-10-28
+updated: 2026-10-29
 ---
 # Plan and decisions
 
@@ -220,3 +220,12 @@ The user accepted the possible dark canvas before a light theme's CSS loads ("no
 The user requested renaming `outcome` to `show-outcome`. The skill directory, invocation name, display name, Codex skill link, test scripts, README and current wiki pages now use `show-outcome`. The feature page is [Show outcome](features/show-outcome.md) (`FEAT-show-outcome`).
 
 The data and page names stay: the `outcome/v1` schema, `outcome.html` and the `outcome.json` example. They name the report being shown, not the skill, and keeping them lets existing drafts and session results still validate. Dated entries above, verification runs and evidence keep the old name as history; only their links now point to the renamed feature page. Sessions opened directly from the old source path, before assembled bundles existed, are not migrated.
+
+
+## Repository role — accepted on 2026-10-29
+
+The user requested moving all current skills into jstack for primary daily use: `fungi`, `fungi-ui`, `grill-form`, and `show-outcome` (formerly `outcome`). Jstack's older browser-based grill-form is replaced by the Fungi version. Jstack owns a complete copy of the skill instructions, assets, licenses, assembly helpers, and verification drivers; it must not load resources from this repository. Fungi and Node.js remain runtime prerequisites.
+
+This repository remains an example and documentation project for authoring Fungi-powered skills. Its runnable skills, tests, and historical evidence are preserved. The root README and authoring walkthrough explain the workflow/runtime/component boundaries and how to adapt the examples. Jstack is the maintained home for daily-use implementations; changes are carried between repositories deliberately, without a runtime or automatic synchronization dependency.
+
+Jstack records its migration verification in its own development wiki. Historical runs here continue to describe the builds they actually tested.
